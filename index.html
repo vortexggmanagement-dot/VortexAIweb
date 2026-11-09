@@ -1,4 +1,4 @@
-
+```html
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
@@ -61,6 +61,7 @@
     }
   </style>
 </head>
+
 <body class="font-sans antialiased selection:bg-cyan-500 selection:text-black">
 
   <!-- ================= NAVBAR ================= -->
@@ -231,7 +232,6 @@
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-
       <!-- Plan 1: Freemium -->
       <div class="glass-card rounded-2xl p-6 flex flex-col justify-between border-slate-800">
         <div>
@@ -321,7 +321,6 @@
           Deploy Enterprise ($499)
         </button>
       </div>
-
     </div>
   </section>
 
@@ -352,7 +351,6 @@
         'pro': 'https://buy.stripe.com/test_pro_link_here',
         'enterprise': 'https://buy.stripe.com/test_enterprise_link_here'
       };
-
       if (stripeLinks[tier] && !stripeLinks[tier].includes('test_')) {
         window.location.href = stripeLinks[tier];
       } else {
@@ -370,18 +368,20 @@
     }
   </script>
 
-  <!-- Official Voiceflow Web Chat Widget Embed (Project ID: 6ae9c03465ecd9bbb861f76a) -->
+  <!-- Official Voiceflow Web Chat Widget Embed (Latest Voiceflow Agentic Next Bundle) -->
   <script type="text/javascript">
     (function(d, t) {
         var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
         v.onload = function() {
           window.voiceflow.chat.load({
-            verify: { projectID: '6ae9c03465ecd9bbb861f76a' },
+            verify: { projectID: '6ae9c03465ecd9bbb861f769' },
             url: 'https://general-runtime.voiceflow.com',
-            versionID: 'production'
+            voice: {
+              url: 'https://runtime-api.voiceflow.com'
+            }
           });
-        };
-        v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+        }
+        v.src = 'https://cdn.voiceflow.com/widget-next/bundle.mjs'; v.type = 'text/javascript'; s.parentNode.insertBefore(v, s);
     })(document, 'script');
   </script>
 
