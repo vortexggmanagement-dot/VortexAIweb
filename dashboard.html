@@ -1,17 +1,16 @@
-
 <!DOCTYPE html>
 <html lang="en" class="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vortex AI | Executive Client Dashboard</title>
-  
-  <!-- Fonts -->
+  <title>Vortex AI | Executive Financial Dashboard & Virtual CFO</title>
+
+  <!-- Google Fonts: Inter & JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-  
-  <!-- Tailwind CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -26,7 +25,7 @@
             vortex: {
               bg: '#07090E',
               sidebar: '#0B0F19',
-              card: 'rgba(17, 24, 39, 0.7)',
+              card: 'rgba(15, 23, 42, 0.75)',
               border: '#1E293B',
               cyan: '#06B6D4',
               indigo: '#6366F1',
@@ -48,7 +47,7 @@
       color: #F8FAFC;
     }
     .glass-panel {
-      background: rgba(15, 23, 42, 0.65);
+      background: rgba(15, 23, 42, 0.7);
       backdrop-filter: blur(12px);
       border: 1px solid rgba(255, 255, 255, 0.08);
     }
@@ -58,23 +57,23 @@
     }
     .dropzone-border:hover {
       border-color: #06B6D4;
-      background: rgba(6, 182, 212, 0.04);
+      background: rgba(6, 182, 212, 0.05);
     }
   </style>
 </head>
-<body class="flex h-screen overflow-hidden font-sans antialiased">
+<body class="flex h-screen w-screen overflow-hidden font-sans antialiased bg-[#07090E] text-slate-100">
 
-  <!-- ================= SIDEBAR ================= -->
-  <aside class="w-64 bg-vortex-sidebar border-r border-vortex-border flex flex-col justify-between shrink-0">
+  <!-- ================= SIDEBAR NAVIGATION ================= -->
+  <aside class="w-64 bg-[#0B0F19] border-r border-slate-800 flex flex-col justify-between shrink-0 z-30">
     <div>
       <!-- Brand Logo -->
-      <div class="h-16 px-6 flex items-center gap-3 border-b border-vortex-border">
+      <div class="h-16 px-6 flex items-center gap-3 border-b border-slate-800">
         <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-cyan-500 to-indigo-600 flex items-center justify-center font-bold text-white text-sm shadow-md shadow-cyan-500/20">
           V
         </div>
         <div class="flex flex-col">
           <span class="text-base font-extrabold tracking-tight text-white">VORTEX<span class="text-cyan-400">.AI</span></span>
-          <span class="text-[9px] font-mono tracking-widest text-slate-400 -mt-1">VIRTUAL CFO PORTAL</span>
+          <span class="text-[9px] font-mono tracking-widest text-slate-400 -mt-1">AUTONOMOUS CFO</span>
         </div>
       </div>
 
@@ -84,17 +83,17 @@
           <i data-lucide="layout-dashboard" class="w-4 h-4"></i>
           <span>Financial Overview</span>
         </a>
-        <a href="#receipts" class="flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-slate-400 hover:bg-slate-800/60 hover:text-slate-200 transition-all">
+        <a href="#vault" class="flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-slate-400 hover:bg-slate-800/60 hover:text-slate-200 transition-all">
           <i data-lucide="receipt" class="w-4 h-4"></i>
           <span>Receipt Vault & OCR</span>
         </a>
         <a href="#ledger" class="flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-slate-400 hover:bg-slate-800/60 hover:text-slate-200 transition-all">
           <i data-lucide="book-open" class="w-4 h-4"></i>
-          <span>General Ledger (Catatan Bergu)</span>
+          <span>General Ledger</span>
         </a>
         <a href="#statements" class="flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-slate-400 hover:bg-slate-800/60 hover:text-slate-200 transition-all">
           <i data-lucide="scale" class="w-4 h-4"></i>
-          <span>Balance Sheet & PKK</span>
+          <span>Balance Sheet & P&L</span>
         </a>
         <a href="#analytics" class="flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-slate-400 hover:bg-slate-800/60 hover:text-slate-200 transition-all">
           <i data-lucide="pie-chart" class="w-4 h-4"></i>
@@ -103,43 +102,43 @@
       </nav>
     </div>
 
-    <!-- User / Workspace Info -->
-    <div class="p-4 border-t border-vortex-border bg-slate-950/40">
+    <!-- Workspace & Account Status -->
+    <div class="p-4 border-t border-slate-800 bg-slate-950/60">
       <div class="flex items-center justify-between mb-2">
-        <span class="text-[10px] font-mono uppercase text-slate-400">Monthly Usage</span>
+        <span class="text-[10px] font-mono uppercase text-slate-400">Monthly Quota</span>
         <span class="text-[10px] font-mono text-cyan-400 font-bold">128 / 4,000 Trans.</span>
       </div>
       <div class="w-full bg-slate-800 rounded-full h-1.5 overflow-hidden mb-3">
         <div class="bg-gradient-to-r from-cyan-400 to-indigo-500 h-full rounded-full" style="width: 14%"></div>
       </div>
       <div class="flex items-center gap-3">
-        <div class="w-8 h-8 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center font-bold text-xs text-slate-300">
-          AB
+        <div class="w-8 h-8 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center font-bold text-xs text-cyan-400">
+          HQ
         </div>
         <div class="flex flex-col truncate">
-          <span class="text-xs font-semibold text-white truncate">Artisan Bakery Cafe</span>
+          <span class="text-xs font-semibold text-white truncate">Corporate Workspace</span>
           <span class="text-[10px] text-emerald-400 font-medium flex items-center gap-1">
             <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-            Pro Plan Active
+            Pro Tier Active ($149/mo)
           </span>
         </div>
       </div>
     </div>
   </aside>
 
-  <!-- ================= MAIN CONTENT ================= -->
+  <!-- ================= MAIN WORKSPACE AREA ================= -->
   <div class="flex-1 flex flex-col min-w-0 overflow-y-auto">
 
-    <!-- Topbar -->
-    <header class="h-16 border-b border-vortex-border px-8 flex items-center justify-between glass-panel sticky top-0 z-40">
+    <!-- Header Control Bar -->
+    <header class="h-16 border-b border-slate-800 px-8 flex items-center justify-between glass-panel sticky top-0 z-20">
       <div class="flex items-center gap-3">
-        <h1 class="text-base font-bold text-white">Client Portal // Executive Financial Diagnostics</h1>
-        <span class="text-xs px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-400 border border-slate-700 font-mono">Q4 Fiscal Engine</span>
+        <h1 class="text-sm sm:text-base font-bold text-white tracking-tight">Executive Dashboard // Automated Accounting Cycle</h1>
+        <span class="text-xs px-2.5 py-0.5 rounded-full bg-slate-800 text-cyan-400 border border-slate-700 font-mono">Real-Time Ingestion</span>
       </div>
       <div class="flex items-center gap-4">
         <button onclick="simulateUpload()" class="flex items-center gap-2 px-3.5 py-1.5 text-xs font-semibold text-cyan-300 bg-cyan-950/60 border border-cyan-800/60 rounded-lg hover:bg-cyan-900/60 transition-all">
           <i data-lucide="plus" class="w-3.5 h-3.5"></i>
-          <span>Upload Receipt</span>
+          <span>Upload Document</span>
         </button>
         <button onclick="openVirtualCFO()" class="flex items-center gap-2 px-4 py-1.5 text-xs font-bold text-black bg-gradient-to-r from-cyan-400 to-cyan-300 rounded-lg shadow-md shadow-cyan-500/20 hover:brightness-110 transition-all">
           <i data-lucide="bot" class="w-3.5 h-3.5"></i>
@@ -148,95 +147,95 @@
       </div>
     </header>
 
-    <!-- Dashboard Body -->
+    <!-- Main Content Container -->
     <main class="p-8 space-y-8 max-w-7xl mx-auto w-full">
 
-      <!-- 1. Executive Metric Cards -->
+      <!-- 1. Executive Metric Summary Cards -->
       <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-        
-        <!-- Metric 1: Revenue -->
+
+        <!-- Card 1: Revenue -->
         <div class="glass-panel p-5 rounded-xl border border-slate-800 flex flex-col justify-between">
           <div class="flex items-center justify-between text-slate-400 mb-2">
-            <span class="text-xs font-medium">Gross Revenue (Hasil)</span>
+            <span class="text-xs font-medium">Gross Revenue (YTD)</span>
             <i data-lucide="trending-up" class="w-4 h-4 text-emerald-400"></i>
           </div>
-          <div class="text-2xl font-extrabold text-white font-mono">RM 3,000.00</div>
-          <div class="mt-2 text-[11px] text-emerald-400 flex items-center gap-1">
+          <div class="text-2xl font-extrabold text-white font-mono">$3,000.00</div>
+          <div class="mt-2 text-[11px] text-emerald-400 flex items-center gap-1 font-mono">
             <span>+18.4%</span>
-            <span class="text-slate-500">vs target BEP bulanan</span>
+            <span class="text-slate-500 font-sans">above BEP target</span>
           </div>
         </div>
 
-        <!-- Metric 2: COGS & Material -->
+        <!-- Card 2: COGS & Material -->
         <div class="glass-panel p-5 rounded-xl border border-slate-800 flex flex-col justify-between">
           <div class="flex items-center justify-between text-slate-400 mb-2">
-            <span class="text-xs font-medium">Total COGS (Kos Bahan)</span>
+            <span class="text-xs font-medium">Cost of Goods Sold (COGS)</span>
             <i data-lucide="shopping-bag" class="w-4 h-4 text-amber-400"></i>
           </div>
-          <div class="text-2xl font-extrabold text-white font-mono">RM 1,200.00</div>
-          <div class="mt-2 text-[11px] text-slate-400">
-            <span>Purata RM4.00 / unit (40% daripada hasil)</span>
+          <div class="text-2xl font-extrabold text-white font-mono">$1,200.00</div>
+          <div class="mt-2 text-[11px] text-slate-400 font-mono">
+            <span>40.0% of Gross Inflow</span>
           </div>
         </div>
 
-        <!-- Metric 3: Fixed Overhead -->
+        <!-- Card 3: Fixed Overhead -->
         <div class="glass-panel p-5 rounded-xl border border-slate-800 flex flex-col justify-between">
           <div class="flex items-center justify-between text-slate-400 mb-2">
-            <span class="text-xs font-medium">Kos Tetap (Sewa & Utiliti)</span>
+            <span class="text-xs font-medium">Fixed Overhead (Rent & Util.)</span>
             <i data-lucide="building" class="w-4 h-4 text-cyan-400"></i>
           </div>
-          <div class="text-2xl font-extrabold text-white font-mono">RM 1,200.00</div>
-          <div class="mt-2 text-[11px] text-slate-400">
-            <span>Ditampung penuh oleh 200 unit pertama</span>
+          <div class="text-2xl font-extrabold text-white font-mono">$1,200.00</div>
+          <div class="mt-2 text-[11px] text-slate-400 font-mono">
+            <span>100% Covered by BEP Units</span>
           </div>
         </div>
 
-        <!-- Metric 4: Net Margin -->
+        <!-- Card 4: Net Margin -->
         <div class="glass-panel p-5 rounded-xl border border-cyan-500/30 bg-cyan-950/10 flex flex-col justify-between">
           <div class="flex items-center justify-between text-cyan-300 mb-2">
-            <span class="text-xs font-medium">Untung Bersih (Net Profit)</span>
+            <span class="text-xs font-medium">Net Corporate Profit</span>
             <i data-lucide="dollar-sign" class="w-4 h-4 text-cyan-400"></i>
           </div>
-          <div class="text-2xl font-extrabold text-cyan-300 font-mono">RM 600.00</div>
-          <div class="mt-2 text-[11px] text-cyan-400 font-semibold">
-            <span>Margin Bersih: 20.0% • Tokokan: 150%</span>
+          <div class="text-2xl font-extrabold text-cyan-300 font-mono">$600.00</div>
+          <div class="mt-2 text-[11px] text-cyan-400 font-mono font-semibold">
+            <span>Net Margin: 20.0% • Markup: 150%</span>
           </div>
         </div>
 
       </section>
 
-      <!-- 2. Smart Receipt Dropzone Section -->
+      <!-- 2. Smart OCR Ingestion Dropzone -->
       <section class="glass-panel p-6 rounded-2xl border border-slate-800">
         <div class="flex items-center justify-between mb-4">
           <div>
             <h2 class="text-sm font-bold text-white flex items-center gap-2">
               <i data-lucide="file-up" class="w-4 h-4 text-cyan-400"></i>
-              <span>Pusat Pengambilan Dokumen Sumber (Autonomous OCR Ingestion)</span>
+              <span>Autonomous Source Document Vault & OCR Ingestion</span>
             </h2>
-            <p class="text-xs text-slate-400 mt-0.5">Tarik dan lepaskan gambar resit, invois pembekal PDF, atau CSV jualan untuk diproses secara automatik ke dalam lejar.</p>
+            <p class="text-xs text-slate-400 mt-0.5">Drag and drop vendor invoices, daily POS receipts, or bank statements. Vortex AI automatically parses, categorizes, and balances entries.</p>
           </div>
-          <span class="text-[11px] font-mono px-2 py-1 rounded bg-slate-800 text-slate-400 border border-slate-700">Auto-Categorization: ON</span>
+          <span class="text-[11px] font-mono px-2.5 py-1 rounded bg-slate-800 text-cyan-400 border border-slate-700">Auto-Balancing Engine: ACTIVE</span>
         </div>
 
-        <div class="dropzone-border rounded-xl p-8 flex flex-col items-center justify-center text-center cursor-pointer bg-slate-900/40">
+        <div onclick="simulateUpload()" class="dropzone-border rounded-xl p-8 flex flex-col items-center justify-center text-center cursor-pointer bg-slate-900/40">
           <div class="w-12 h-12 rounded-full bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 mb-3">
             <i data-lucide="upload-cloud" class="w-6 h-6"></i>
           </div>
-          <span class="text-xs font-semibold text-slate-200">Klik untuk muat naik dokumen atau heret fail ke sini</span>
-          <span class="text-[11px] text-slate-500 mt-1">Menyokong format PDF, PNG, JPG, dan CSV sehingga 25MB</span>
+          <span class="text-xs font-semibold text-slate-200">Click to upload raw documents or drag files here</span>
+          <span class="text-[11px] text-slate-500 mt-1 font-mono">Supported extensions: PDF, PNG, JPG, CSV up to 25MB</span>
         </div>
       </section>
 
-      <!-- 3. General Ledger & Double-Entry Table -->
+      <!-- 3. General Ledger & Double-Entry Verification Table -->
       <section class="glass-panel rounded-2xl border border-slate-800 overflow-hidden">
-        <div class="p-5 border-b border-slate-800 flex items-center justify-between">
+        <div class="p-5 border-b border-slate-800 flex flex-wrap items-center justify-between gap-4">
           <div class="flex items-center gap-2">
             <i data-lucide="book-marked" class="w-4 h-4 text-indigo-400"></i>
-            <h3 class="text-sm font-bold text-white">Kitaran Catatan Bergu Automatik (General Journal & Ledger)</h3>
+            <h3 class="text-sm font-bold text-white">General Journal & Double-Entry Ledger</h3>
           </div>
-          <span class="text-xs font-mono text-emerald-400 bg-emerald-950/60 border border-emerald-800/40 px-2.5 py-0.5 rounded-full flex items-center gap-1.5">
+          <span class="text-xs font-mono text-emerald-400 bg-emerald-950/60 border border-emerald-800/40 px-3 py-1 rounded-full flex items-center gap-1.5">
             <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-            Imbangan Seimbang: Debit (RM 4,400) = Kredit (RM 4,400)
+            Balanced Equation: Debit ($4,400.00) = Credit ($4,400.00)
           </span>
         </div>
 
@@ -244,52 +243,52 @@
           <table class="w-full text-left text-xs font-mono">
             <thead class="bg-slate-900/80 text-slate-400 uppercase text-[10px] border-b border-slate-800">
               <tr>
-                <th class="py-3 px-5">Tarikh</th>
-                <th class="py-3 px-5">Dokumen Sumber</th>
-                <th class="py-3 px-5">Butiran & Klasifikasi Perakaunan</th>
-                <th class="py-3 px-5 text-right">Debit (RM)</th>
-                <th class="py-3 px-5 text-right">Kredit (RM)</th>
-                <th class="py-3 px-5 text-center">Status Audit</th>
+                <th class="py-3 px-5">Date</th>
+                <th class="py-3 px-5">Source Doc ID</th>
+                <th class="py-3 px-5">Account Classification & Narrative</th>
+                <th class="py-3 px-5 text-right">Debit ($)</th>
+                <th class="py-3 px-5 text-right">Credit ($)</th>
+                <th class="py-3 px-5 text-center">Audit Status</th>
               </tr>
             </thead>
             <tbody class="divide-y divide-slate-800/60 text-slate-300">
               <tr class="hover:bg-slate-800/30 transition-colors">
-                <td class="py-3.5 px-5 text-slate-400">01/10/2025</td>
-                <td class="py-3.5 px-5 text-cyan-400 font-sans font-medium">Resit Sewa #SR-1029</td>
+                <td class="py-3.5 px-5 text-slate-400">Oct 01, 2025</td>
+                <td class="py-3.5 px-5 text-cyan-400 font-sans font-medium">Receipt #REC-1029</td>
                 <td class="py-3.5 px-5 font-sans">
-                  <div class="font-semibold text-white">Belanja Sewa Premis Kedai</div>
-                  <div class="text-[11px] text-slate-400">Kredit: Akaun Bank / Tunai</div>
+                  <div class="font-semibold text-white">Commercial Premise Rental Expense</div>
+                  <div class="text-[11px] text-slate-400">Credit: Primary Operating Bank Account</div>
                 </td>
                 <td class="py-3.5 px-5 text-right font-bold text-white">1,200.00</td>
                 <td class="py-3.5 px-5 text-right text-slate-500">-</td>
                 <td class="py-3.5 px-5 text-center">
-                  <span class="px-2 py-0.5 rounded text-[10px] bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Diposkan</span>
+                  <span class="px-2 py-0.5 rounded text-[10px] bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Posted</span>
                 </td>
               </tr>
               <tr class="hover:bg-slate-800/30 transition-colors">
-                <td class="py-3.5 px-5 text-slate-400">15/10/2025</td>
-                <td class="py-3.5 px-5 text-cyan-400 font-sans font-medium">Invois Tepung #INV-4410</td>
+                <td class="py-3.5 px-5 text-slate-400">Oct 15, 2025</td>
+                <td class="py-3.5 px-5 text-cyan-400 font-sans font-medium">Invoice #INV-8841</td>
                 <td class="py-3.5 px-5 font-sans">
-                  <div class="font-semibold text-white">Inventori Bahan Mentah (COGS)</div>
-                  <div class="text-[11px] text-slate-400">Kredit: Pemiutang Dagangan (Pembekal Tepung)</div>
+                  <div class="font-semibold text-white">Raw Material Inventory (COGS Ingestion)</div>
+                  <div class="text-[11px] text-slate-400">Credit: Trade Accounts Payable (Vendor)</div>
                 </td>
                 <td class="py-3.5 px-5 text-right font-bold text-white">800.00</td>
                 <td class="py-3.5 px-5 text-right text-slate-500">-</td>
                 <td class="py-3.5 px-5 text-center">
-                  <span class="px-2 py-0.5 rounded text-[10px] bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Diposkan</span>
+                  <span class="px-2 py-0.5 rounded text-[10px] bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Posted</span>
                 </td>
               </tr>
               <tr class="hover:bg-slate-800/30 transition-colors">
-                <td class="py-3.5 px-5 text-slate-400">31/10/2025</td>
-                <td class="py-3.5 px-5 text-cyan-400 font-sans font-medium">Laporan POS Z-Report</td>
+                <td class="py-3.5 px-5 text-slate-400">Oct 31, 2025</td>
+                <td class="py-3.5 px-5 text-cyan-400 font-sans font-medium">POS Batch #POS-9930</td>
                 <td class="py-3.5 px-5 font-sans">
-                  <div class="font-semibold text-white">Hasil Jualan (300 Biji Kek @ RM10)</div>
-                  <div class="text-[11px] text-slate-400">Debit: Penerimaan Tunai / Bank</div>
+                  <div class="font-semibold text-white">Gross Revenue (300 Units Sold @ $10.00)</div>
+                  <div class="text-[11px] text-slate-400">Debit: Cash Inflow & Merchant Settlement</div>
                 </td>
                 <td class="py-3.5 px-5 text-right text-slate-500">-</td>
                 <td class="py-3.5 px-5 text-right font-bold text-emerald-400">3,000.00</td>
                 <td class="py-3.5 px-5 text-center">
-                  <span class="px-2 py-0.5 rounded text-[10px] bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Diposkan</span>
+                  <span class="px-2 py-0.5 rounded text-[10px] bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Posted</span>
                 </td>
               </tr>
             </tbody>
@@ -297,32 +296,32 @@
         </div>
       </section>
 
-      <!-- 4. Virtual CFO Analytical Action Levers -->
+      <!-- 4. Virtual CFO Strategic Recommendations -->
       <section class="glass-panel p-6 rounded-2xl border border-slate-800 space-y-4">
         <div class="flex items-center gap-2 text-cyan-400 font-mono text-xs font-bold uppercase tracking-wider">
           <i data-lucide="sparkles" class="w-4 h-4"></i>
-          <span>Virtual CFO Strategic Diagnostic (Bulan Semasa)</span>
+          <span>Virtual CFO Strategic Diagnostic Summary</span>
         </div>
-        
+
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs font-sans">
           <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800">
-            <span class="font-bold text-white block mb-1">1. Titik Pulang Modal (BEP)</span>
+            <span class="font-bold text-white block mb-1">1. Break-Even Equilibrium</span>
             <p class="text-slate-400 leading-relaxed">
-              BEP anda ialah <strong>200 biji kek (RM2,000)</strong>. Dengan jualan semasa 300 biji, anda mempunyai <strong>Margin Keselamatan (MoS) sebanyak 33.3%</strong>.
+              Your BEP threshold is exactly <strong>200 units ($2,000.00)</strong>. At 300 units sold, you hold a healthy <strong>Margin of Safety (MoS) of 33.3%</strong>.
             </p>
           </div>
 
           <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800">
-            <span class="font-bold text-white block mb-1">2. Unit Economics</span>
+            <span class="font-bold text-white block mb-1">2. Unit Economics Precision</span>
             <p class="text-slate-400 leading-relaxed">
-              Setiap kek menghasilkan <strong>RM6.00 Untung Sumbangan (60.0%)</strong> dengan tokokan kos 150%. Untung bersih tulen selepas sewa adalah <strong>RM2.00 seunit</strong>.
+              Every unit yields <strong>$6.00 Contribution Margin (60.0%)</strong> with 150% markup. Pure net profit after overhead settlement is <strong>$2.00 per unit</strong>.
             </p>
           </div>
 
           <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800">
-            <span class="font-bold text-white block mb-1">3. Tindakan CFO Disyorkan</span>
+            <span class="font-bold text-white block mb-1">3. Strategic Action Levers</span>
             <p class="text-slate-400 leading-relaxed">
-              Jelaskan baki pemiutang RM800 dalam 10 hari untuk tuntut diskaun tunai 2%, dan gandingkan kek dengan kopi premium bagi melonjakkan purata resit ke RM15.
+              Settle the $800 vendor balance within 10 days to capture a 2% early-settlement discount, and bundle high-margin add-ons to expand average order value.
             </p>
           </div>
         </div>
@@ -336,19 +335,19 @@
     lucide.createIcons();
 
     function simulateUpload() {
-      alert("Smart OCR Ingestion: Sistem bersedia menerima fail PDF/gambar resit. Pada fasa seterusnya, fail ini akan diproses secara automatik ke dalam lejar di atas.");
+      alert("Autonomous OCR Ingestion: Ready to ingest PDF, PNG, or CSV files. Documents will be parsed and posted into the General Ledger automatically.");
     }
 
     function openVirtualCFO() {
       if (window.voiceflow && window.voiceflow.chat) {
         window.voiceflow.chat.open();
       } else {
-        alert("Ejen Virtual CFO sedia menerima soalan perakaunan anda di widget bawah kanan.");
+        alert("Virtual CFO Core initialized. Access the chat terminal at the bottom right.");
       }
     }
   </script>
 
-  <!-- Official Voiceflow Web Chat Widget Embed -->
+  <!-- Official Voiceflow Web Chat Widget Embed (Active Project ID: 6ae9c03465ecd9bbb861f769) -->
   <script type="text/javascript">
     (function(d, t) {
         var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
@@ -366,4 +365,4 @@
   </script>
 </body>
 </html>
-tu pintu hadapan untuk menarik jualan, dan satu portal dalaman bertaraf perusahaan untuk mengendalikan tugas perakaunan pelanggan anda.
+
