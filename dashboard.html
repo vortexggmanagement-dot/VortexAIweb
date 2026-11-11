@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,13 +8,12 @@
   <!-- Google Fonts: Inter & JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
-      darkMode: 'class',
       theme: {
         extend: {
           fontFamily: {
@@ -22,15 +21,19 @@
             mono: ['JetBrains Mono', 'monospace'],
           },
           colors: {
-            vortex: {
-              bg: '#07090E',
-              sidebar: '#0B0F19',
-              card: 'rgba(15, 23, 42, 0.75)',
-              border: '#1E293B',
-              cyan: '#06B6D4',
-              indigo: '#6366F1',
-              emerald: '#10B981',
-              amber: '#F59E0B',
+            brand: {
+              50: '#F0F9FF',
+              100: '#E0F2FE',
+              200: '#BAE6FD',
+              400: '#38BDF8',
+              500: '#0EA5E9',
+              600: '#0284C7',
+              700: '#0369A1',
+              900: '#0C4A6E',
+            },
+            slate: {
+              850: '#151F32',
+              950: '#0B0F19',
             }
           }
         }
@@ -43,83 +46,106 @@
 
   <style>
     body {
-      background-color: #07090E;
-      color: #F8FAFC;
+      background-color: #F8FAFC;
+      color: #0F172A;
     }
-    .glass-panel {
-      background: rgba(15, 23, 42, 0.7);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-    }
-    .dropzone-border {
-      border: 2px dashed #334155;
+
+    .surface-card {
+      background-color: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.04), 0 2px 4px -2px rgba(0, 0, 0, 0.03);
       transition: all 0.2s ease;
     }
+
+    .surface-card:hover {
+      border-color: #CBD5E1;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.07), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+    }
+
+    .dropzone-border {
+      border: 2px dashed #CBD5E1;
+      background-color: #F8FAFC;
+      transition: all 0.2s ease;
+    }
+
     .dropzone-border:hover {
-      border-color: #06B6D4;
-      background: rgba(6, 182, 212, 0.05);
+      border-color: #0EA5E9;
+      background-color: #F0F9FF;
     }
   </style>
 </head>
-<body class="flex h-screen w-screen overflow-hidden font-sans antialiased bg-[#07090E] text-slate-100">
+<body class="flex h-screen w-screen overflow-hidden font-sans antialiased bg-[#F8FAFC] text-slate-900">
 
   <!-- ================= SIDEBAR NAVIGATION ================= -->
-  <aside class="w-64 bg-[#0B0F19] border-r border-slate-800 flex flex-col justify-between shrink-0 z-30">
+  <aside class="w-64 bg-white border-r border-slate-200 flex flex-col justify-between shrink-0 z-30">
     <div>
       <!-- Brand Logo -->
-      <div class="h-16 px-6 flex items-center gap-3 border-b border-slate-800">
-        <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-cyan-500 to-indigo-600 flex items-center justify-center font-bold text-white text-sm shadow-md shadow-cyan-500/20">
+      <div class="h-16 px-6 flex items-center gap-3 border-b border-slate-200">
+        <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-brand-600 to-indigo-600 flex items-center justify-center font-bold text-white text-sm shadow-md shadow-brand-500/20">
           V
         </div>
         <div class="flex flex-col">
-          <span class="text-base font-extrabold tracking-tight text-white">VORTEX<span class="text-cyan-400">.AI</span></span>
-          <span class="text-[9px] font-mono tracking-widest text-slate-400 -mt-1">AUTONOMOUS CFO</span>
+          <span class="text-base font-extrabold tracking-tight text-slate-900">VORTEX<span class="text-brand-600">.AI</span></span>
+          <span class="text-[9px] font-mono tracking-widest text-slate-500 -mt-1 font-semibold uppercase">Autonomous CFO</span>
         </div>
       </div>
 
       <!-- Navigation Links -->
       <nav class="p-4 space-y-1.5 text-xs font-medium">
-        <a href="#overview" class="flex items-center gap-3 px-3.5 py-2.5 rounded-lg bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 transition-all">
-          <i data-lucide="layout-dashboard" class="w-4 h-4"></i>
+        <a href="#overview" class="flex items-center gap-3 px-3.5 py-2.5 rounded-lg bg-brand-50 text-brand-700 border border-brand-200 transition-all font-semibold">
+          <i data-lucide="layout-dashboard" class="w-4 h-4 text-brand-600"></i>
           <span>Financial Overview</span>
         </a>
-        <a href="#vault" class="flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-slate-400 hover:bg-slate-800/60 hover:text-slate-200 transition-all">
-          <i data-lucide="receipt" class="w-4 h-4"></i>
+
+        <a href="#vault" class="flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-all">
+          <i data-lucide="receipt" class="w-4 h-4 text-slate-400"></i>
           <span>Receipt Vault & OCR</span>
         </a>
-        <a href="#ledger" class="flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-slate-400 hover:bg-slate-800/60 hover:text-slate-200 transition-all">
-          <i data-lucide="book-open" class="w-4 h-4"></i>
+
+        <a href="#ledger" class="flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-all">
+          <i data-lucide="book-open" class="w-4 h-4 text-slate-400"></i>
           <span>General Ledger</span>
         </a>
-        <a href="#statements" class="flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-slate-400 hover:bg-slate-800/60 hover:text-slate-200 transition-all">
-          <i data-lucide="scale" class="w-4 h-4"></i>
+
+        <a href="#statements" class="flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-all">
+          <i data-lucide="scale" class="w-4 h-4 text-slate-400"></i>
           <span>Balance Sheet & P&L</span>
         </a>
-        <a href="#analytics" class="flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-slate-400 hover:bg-slate-800/60 hover:text-slate-200 transition-all">
-          <i data-lucide="pie-chart" class="w-4 h-4"></i>
+
+        <a href="#analytics" class="flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-all">
+          <i data-lucide="pie-chart" class="w-4 h-4 text-slate-400"></i>
           <span>Unit Economics & BEP</span>
         </a>
+
+        <div class="pt-4 mt-4 border-t border-slate-100">
+          <a href="/index.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-slate-500 hover:bg-slate-100 hover:text-slate-800 transition-all">
+            <i data-lucide="arrow-left" class="w-4 h-4"></i>
+            <span>Back to Public Site</span>
+          </a>
+        </div>
       </nav>
     </div>
 
     <!-- Workspace & Account Status -->
-    <div class="p-4 border-t border-slate-800 bg-slate-950/60">
+    <div class="p-4 border-t border-slate-200 bg-slate-50/80">
       <div class="flex items-center justify-between mb-2">
-        <span class="text-[10px] font-mono uppercase text-slate-400">Monthly Quota</span>
-        <span class="text-[10px] font-mono text-cyan-400 font-bold">128 / 4,000 Trans.</span>
+        <span class="text-[10px] font-mono uppercase text-slate-500 font-semibold">Monthly Quota</span>
+        <span class="text-[10px] font-mono text-brand-700 font-bold">128 / 4,000 Trans.</span>
       </div>
-      <div class="w-full bg-slate-800 rounded-full h-1.5 overflow-hidden mb-3">
-        <div class="bg-gradient-to-r from-cyan-400 to-indigo-500 h-full rounded-full" style="width: 14%"></div>
+
+      <div class="w-full bg-slate-200 rounded-full h-1.5 overflow-hidden mb-3">
+        <div class="bg-gradient-to-r from-brand-500 to-indigo-600 h-full rounded-full" style="width: 14%"></div>
       </div>
+
       <div class="flex items-center gap-3">
-        <div class="w-8 h-8 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center font-bold text-xs text-cyan-400">
+        <div class="w-8 h-8 rounded-full bg-white border border-slate-300 flex items-center justify-center font-bold text-xs text-brand-600 shadow-sm">
           HQ
         </div>
         <div class="flex flex-col truncate">
-          <span class="text-xs font-semibold text-white truncate">Corporate Workspace</span>
-          <span class="text-[10px] text-emerald-400 font-medium flex items-center gap-1">
-            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-            Pro Tier Active ($149/mo)
+          <span class="text-xs font-bold text-slate-800 truncate">Corporate Workspace</span>
+          <span class="text-[10px] text-emerald-700 font-semibold flex items-center gap-1">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+            Pro Tier Active ($199/mo)
           </span>
         </div>
       </div>
@@ -127,20 +153,21 @@
   </aside>
 
   <!-- ================= MAIN WORKSPACE AREA ================= -->
-  <div class="flex-1 flex flex-col min-w-0 overflow-y-auto">
-
+  <div class="flex-1 flex flex-col min-w-0 overflow-y-auto bg-[#F8FAFC]">
     <!-- Header Control Bar -->
-    <header class="h-16 border-b border-slate-800 px-8 flex items-center justify-between glass-panel sticky top-0 z-20">
+    <header class="h-16 border-b border-slate-200 px-8 flex items-center justify-between bg-white/90 backdrop-blur-md sticky top-0 z-20">
       <div class="flex items-center gap-3">
-        <h1 class="text-sm sm:text-base font-bold text-white tracking-tight">Executive Dashboard // Automated Accounting Cycle</h1>
-        <span class="text-xs px-2.5 py-0.5 rounded-full bg-slate-800 text-cyan-400 border border-slate-700 font-mono">Real-Time Ingestion</span>
+        <h1 class="text-sm sm:text-base font-bold text-slate-900 tracking-tight">Executive Dashboard // Automated Accounting Cycle</h1>
+        <span class="text-xs px-2.5 py-0.5 rounded-full bg-brand-50 text-brand-700 border border-brand-200 font-mono font-medium">Real-Time Ingestion</span>
       </div>
-      <div class="flex items-center gap-4">
-        <button onclick="simulateUpload()" class="flex items-center gap-2 px-3.5 py-1.5 text-xs font-semibold text-cyan-300 bg-cyan-950/60 border border-cyan-800/60 rounded-lg hover:bg-cyan-900/60 transition-all">
-          <i data-lucide="plus" class="w-3.5 h-3.5"></i>
+
+      <div class="flex items-center gap-3">
+        <button onclick="simulateUpload()" class="flex items-center gap-2 px-3.5 py-2 text-xs font-semibold text-slate-700 bg-slate-100 border border-slate-200 rounded-lg hover:bg-slate-200 transition-all">
+          <i data-lucide="plus" class="w-3.5 h-3.5 text-slate-500"></i>
           <span>Upload Document</span>
         </button>
-        <button onclick="openVirtualCFO()" class="flex items-center gap-2 px-4 py-1.5 text-xs font-bold text-black bg-gradient-to-r from-cyan-400 to-cyan-300 rounded-lg shadow-md shadow-cyan-500/20 hover:brightness-110 transition-all">
+
+        <button onclick="openVirtualCFO()" class="flex items-center gap-2 px-4 py-2 text-xs font-bold text-white bg-brand-600 hover:bg-brand-700 rounded-lg shadow-sm hover:shadow-md transition-all">
           <i data-lucide="bot" class="w-3.5 h-3.5"></i>
           <span>Consult Virtual CFO</span>
         </button>
@@ -152,96 +179,102 @@
 
       <!-- 1. Executive Metric Summary Cards -->
       <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-
         <!-- Card 1: Revenue -->
-        <div class="glass-panel p-5 rounded-xl border border-slate-800 flex flex-col justify-between">
-          <div class="flex items-center justify-between text-slate-400 mb-2">
-            <span class="text-xs font-medium">Gross Revenue (YTD)</span>
-            <i data-lucide="trending-up" class="w-4 h-4 text-emerald-400"></i>
+        <div class="surface-card p-5 rounded-2xl flex flex-col justify-between">
+          <div class="flex items-center justify-between text-slate-500 mb-2">
+            <span class="text-xs font-semibold uppercase tracking-wider">Gross Revenue (YTD)</span>
+            <div class="w-7 h-7 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center">
+              <i data-lucide="trending-up" class="w-4 h-4"></i>
+            </div>
           </div>
-          <div class="text-2xl font-extrabold text-white font-mono">$3,000.00</div>
-          <div class="mt-2 text-[11px] text-emerald-400 flex items-center gap-1 font-mono">
+          <div class="text-2xl font-extrabold text-slate-900 font-mono">$3,000.00</div>
+          <div class="mt-2 text-[11px] text-emerald-700 flex items-center gap-1 font-mono font-semibold">
             <span>+18.4%</span>
-            <span class="text-slate-500 font-sans">above BEP target</span>
+            <span class="text-slate-500 font-sans font-normal">above BEP target</span>
           </div>
         </div>
 
         <!-- Card 2: COGS & Material -->
-        <div class="glass-panel p-5 rounded-xl border border-slate-800 flex flex-col justify-between">
-          <div class="flex items-center justify-between text-slate-400 mb-2">
-            <span class="text-xs font-medium">Cost of Goods Sold (COGS)</span>
-            <i data-lucide="shopping-bag" class="w-4 h-4 text-amber-400"></i>
+        <div class="surface-card p-5 rounded-2xl flex flex-col justify-between">
+          <div class="flex items-center justify-between text-slate-500 mb-2">
+            <span class="text-xs font-semibold uppercase tracking-wider">Cost of Goods Sold (COGS)</span>
+            <div class="w-7 h-7 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center">
+              <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+            </div>
           </div>
-          <div class="text-2xl font-extrabold text-white font-mono">$1,200.00</div>
-          <div class="mt-2 text-[11px] text-slate-400 font-mono">
+          <div class="text-2xl font-extrabold text-slate-900 font-mono">$1,200.00</div>
+          <div class="mt-2 text-[11px] text-slate-500 font-mono">
             <span>40.0% of Gross Inflow</span>
           </div>
         </div>
 
         <!-- Card 3: Fixed Overhead -->
-        <div class="glass-panel p-5 rounded-xl border border-slate-800 flex flex-col justify-between">
-          <div class="flex items-center justify-between text-slate-400 mb-2">
-            <span class="text-xs font-medium">Fixed Overhead (Rent & Util.)</span>
-            <i data-lucide="building" class="w-4 h-4 text-cyan-400"></i>
+        <div class="surface-card p-5 rounded-2xl flex flex-col justify-between">
+          <div class="flex items-center justify-between text-slate-500 mb-2">
+            <span class="text-xs font-semibold uppercase tracking-wider">Fixed Overhead (Rent & Util.)</span>
+            <div class="w-7 h-7 rounded-lg bg-brand-50 text-brand-600 flex items-center justify-center">
+              <i data-lucide="building" class="w-4 h-4"></i>
+            </div>
           </div>
-          <div class="text-2xl font-extrabold text-white font-mono">$1,200.00</div>
-          <div class="mt-2 text-[11px] text-slate-400 font-mono">
+          <div class="text-2xl font-extrabold text-slate-900 font-mono">$1,200.00</div>
+          <div class="mt-2 text-[11px] text-slate-500 font-mono">
             <span>100% Covered by BEP Units</span>
           </div>
         </div>
 
         <!-- Card 4: Net Margin -->
-        <div class="glass-panel p-5 rounded-xl border border-cyan-500/30 bg-cyan-950/10 flex flex-col justify-between">
-          <div class="flex items-center justify-between text-cyan-300 mb-2">
-            <span class="text-xs font-medium">Net Corporate Profit</span>
-            <i data-lucide="dollar-sign" class="w-4 h-4 text-cyan-400"></i>
+        <div class="surface-card p-5 rounded-2xl border-brand-200 bg-brand-50/40 flex flex-col justify-between">
+          <div class="flex items-center justify-between text-brand-700 mb-2">
+            <span class="text-xs font-semibold uppercase tracking-wider">Net Corporate Profit</span>
+            <div class="w-7 h-7 rounded-lg bg-brand-100 text-brand-700 flex items-center justify-center">
+              <i data-lucide="dollar-sign" class="w-4 h-4"></i>
+            </div>
           </div>
-          <div class="text-2xl font-extrabold text-cyan-300 font-mono">$600.00</div>
-          <div class="mt-2 text-[11px] text-cyan-400 font-mono font-semibold">
+          <div class="text-2xl font-extrabold text-brand-900 font-mono">$600.00</div>
+          <div class="mt-2 text-[11px] text-brand-700 font-mono font-semibold">
             <span>Net Margin: 20.0% • Markup: 150%</span>
           </div>
         </div>
-
       </section>
 
       <!-- 2. Smart OCR Ingestion Dropzone -->
-      <section class="glass-panel p-6 rounded-2xl border border-slate-800">
+      <section class="surface-card p-6 rounded-2xl">
         <div class="flex items-center justify-between mb-4">
           <div>
-            <h2 class="text-sm font-bold text-white flex items-center gap-2">
-              <i data-lucide="file-up" class="w-4 h-4 text-cyan-400"></i>
+            <h2 class="text-sm font-bold text-slate-900 flex items-center gap-2">
+              <i data-lucide="file-up" class="w-4 h-4 text-brand-600"></i>
               <span>Autonomous Source Document Vault & OCR Ingestion</span>
             </h2>
-            <p class="text-xs text-slate-400 mt-0.5">Drag and drop vendor invoices, daily POS receipts, or bank statements. Vortex AI automatically parses, categorizes, and balances entries.</p>
+            <p class="text-xs text-slate-500 mt-0.5">Drag and drop vendor invoices, daily POS receipts, or bank statements. Vortex AI automatically parses, categorizes, and balances entries.</p>
           </div>
-          <span class="text-[11px] font-mono px-2.5 py-1 rounded bg-slate-800 text-cyan-400 border border-slate-700">Auto-Balancing Engine: ACTIVE</span>
+          <span class="text-[11px] font-mono px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 font-semibold">Auto-Balancing Engine: ACTIVE</span>
         </div>
 
-        <div onclick="simulateUpload()" class="dropzone-border rounded-xl p-8 flex flex-col items-center justify-center text-center cursor-pointer bg-slate-900/40">
-          <div class="w-12 h-12 rounded-full bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 mb-3">
+        <div onclick="simulateUpload()" class="dropzone-border rounded-xl p-8 flex flex-col items-center justify-center text-center cursor-pointer">
+          <div class="w-12 h-12 rounded-full bg-brand-50 border border-brand-200 flex items-center justify-center text-brand-600 mb-3 shadow-sm">
             <i data-lucide="upload-cloud" class="w-6 h-6"></i>
           </div>
-          <span class="text-xs font-semibold text-slate-200">Click to upload raw documents or drag files here</span>
-          <span class="text-[11px] text-slate-500 mt-1 font-mono">Supported extensions: PDF, PNG, JPG, CSV up to 25MB</span>
+          <span class="text-xs font-bold text-slate-800">Click to upload raw documents or drag files here</span>
+          <span class="text-[11px] text-slate-500 mt-1 font-mono">Supported formats: PDF, PNG, JPG, CSV up to 25MB</span>
         </div>
       </section>
 
       <!-- 3. General Ledger & Double-Entry Verification Table -->
-      <section class="glass-panel rounded-2xl border border-slate-800 overflow-hidden">
-        <div class="p-5 border-b border-slate-800 flex flex-wrap items-center justify-between gap-4">
+      <section class="surface-card rounded-2xl overflow-hidden">
+        <div class="p-5 border-b border-slate-200 flex flex-wrap items-center justify-between gap-4 bg-slate-50/50">
           <div class="flex items-center gap-2">
-            <i data-lucide="book-marked" class="w-4 h-4 text-indigo-400"></i>
-            <h3 class="text-sm font-bold text-white">General Journal & Double-Entry Ledger</h3>
+            <i data-lucide="book-marked" class="w-4 h-4 text-indigo-600"></i>
+            <h3 class="text-sm font-bold text-slate-900">General Journal & Double-Entry Ledger</h3>
           </div>
-          <span class="text-xs font-mono text-emerald-400 bg-emerald-950/60 border border-emerald-800/40 px-3 py-1 rounded-full flex items-center gap-1.5">
-            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+          <span class="text-xs font-mono text-emerald-800 bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-full flex items-center gap-1.5 font-bold">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
             Balanced Equation: Debit ($4,400.00) = Credit ($4,400.00)
           </span>
         </div>
 
         <div class="overflow-x-auto">
           <table class="w-full text-left text-xs font-mono">
-            <thead class="bg-slate-900/80 text-slate-400 uppercase text-[10px] border-b border-slate-800">
+            <thead class="bg-slate-50 text-slate-500 uppercase text-[10px] border-b border-slate-200 font-semibold">
               <tr>
                 <th class="py-3 px-5">Date</th>
                 <th class="py-3 px-5">Source Doc ID</th>
@@ -251,44 +284,46 @@
                 <th class="py-3 px-5 text-center">Audit Status</th>
               </tr>
             </thead>
-            <tbody class="divide-y divide-slate-800/60 text-slate-300">
-              <tr class="hover:bg-slate-800/30 transition-colors">
-                <td class="py-3.5 px-5 text-slate-400">Oct 01, 2025</td>
-                <td class="py-3.5 px-5 text-cyan-400 font-sans font-medium">Receipt #REC-1029</td>
+            <tbody class="divide-y divide-slate-100 text-slate-700 bg-white">
+              <tr class="hover:bg-slate-50/80 transition-colors">
+                <td class="py-3.5 px-5 text-slate-500">Oct 01, 2025</td>
+                <td class="py-3.5 px-5 text-brand-600 font-sans font-bold">Receipt #REC-1029</td>
                 <td class="py-3.5 px-5 font-sans">
-                  <div class="font-semibold text-white">Commercial Premise Rental Expense</div>
-                  <div class="text-[11px] text-slate-400">Credit: Primary Operating Bank Account</div>
+                  <div class="font-bold text-slate-900">Commercial Premise Rental Expense</div>
+                  <div class="text-[11px] text-slate-500">Credit: Primary Operating Bank Account</div>
                 </td>
-                <td class="py-3.5 px-5 text-right font-bold text-white">1,200.00</td>
-                <td class="py-3.5 px-5 text-right text-slate-500">-</td>
+                <td class="py-3.5 px-5 text-right font-bold text-slate-900">1,200.00</td>
+                <td class="py-3.5 px-5 text-right text-slate-400">-</td>
                 <td class="py-3.5 px-5 text-center">
-                  <span class="px-2 py-0.5 rounded text-[10px] bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Posted</span>
+                  <span class="px-2.5 py-0.5 rounded-full text-[10px] bg-emerald-50 text-emerald-700 border border-emerald-200 font-semibold">Posted</span>
                 </td>
               </tr>
-              <tr class="hover:bg-slate-800/30 transition-colors">
-                <td class="py-3.5 px-5 text-slate-400">Oct 15, 2025</td>
-                <td class="py-3.5 px-5 text-cyan-400 font-sans font-medium">Invoice #INV-8841</td>
+
+              <tr class="hover:bg-slate-50/80 transition-colors">
+                <td class="py-3.5 px-5 text-slate-500">Oct 15, 2025</td>
+                <td class="py-3.5 px-5 text-brand-600 font-sans font-bold">Invoice #INV-8841</td>
                 <td class="py-3.5 px-5 font-sans">
-                  <div class="font-semibold text-white">Raw Material Inventory (COGS Ingestion)</div>
-                  <div class="text-[11px] text-slate-400">Credit: Trade Accounts Payable (Vendor)</div>
+                  <div class="font-bold text-slate-900">Raw Material Inventory (COGS Ingestion)</div>
+                  <div class="text-[11px] text-slate-500">Credit: Trade Accounts Payable (Vendor)</div>
                 </td>
-                <td class="py-3.5 px-5 text-right font-bold text-white">800.00</td>
-                <td class="py-3.5 px-5 text-right text-slate-500">-</td>
+                <td class="py-3.5 px-5 text-right font-bold text-slate-900">800.00</td>
+                <td class="py-3.5 px-5 text-right text-slate-400">-</td>
                 <td class="py-3.5 px-5 text-center">
-                  <span class="px-2 py-0.5 rounded text-[10px] bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Posted</span>
+                  <span class="px-2.5 py-0.5 rounded-full text-[10px] bg-emerald-50 text-emerald-700 border border-emerald-200 font-semibold">Posted</span>
                 </td>
               </tr>
-              <tr class="hover:bg-slate-800/30 transition-colors">
-                <td class="py-3.5 px-5 text-slate-400">Oct 31, 2025</td>
-                <td class="py-3.5 px-5 text-cyan-400 font-sans font-medium">POS Batch #POS-9930</td>
+
+              <tr class="hover:bg-slate-50/80 transition-colors">
+                <td class="py-3.5 px-5 text-slate-500">Oct 31, 2025</td>
+                <td class="py-3.5 px-5 text-brand-600 font-sans font-bold">POS Batch #POS-9930</td>
                 <td class="py-3.5 px-5 font-sans">
-                  <div class="font-semibold text-white">Gross Revenue (300 Units Sold @ $10.00)</div>
-                  <div class="text-[11px] text-slate-400">Debit: Cash Inflow & Merchant Settlement</div>
+                  <div class="font-bold text-slate-900">Gross Revenue (300 Units Sold @ $10.00)</div>
+                  <div class="text-[11px] text-slate-500">Debit: Cash Inflow & Merchant Settlement</div>
                 </td>
-                <td class="py-3.5 px-5 text-right text-slate-500">-</td>
-                <td class="py-3.5 px-5 text-right font-bold text-emerald-400">3,000.00</td>
+                <td class="py-3.5 px-5 text-right text-slate-400">-</td>
+                <td class="py-3.5 px-5 text-right font-bold text-emerald-600">3,000.00</td>
                 <td class="py-3.5 px-5 text-center">
-                  <span class="px-2 py-0.5 rounded text-[10px] bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Posted</span>
+                  <span class="px-2.5 py-0.5 rounded-full text-[10px] bg-emerald-50 text-emerald-700 border border-emerald-200 font-semibold">Posted</span>
                 </td>
               </tr>
             </tbody>
@@ -297,30 +332,30 @@
       </section>
 
       <!-- 4. Virtual CFO Strategic Recommendations -->
-      <section class="glass-panel p-6 rounded-2xl border border-slate-800 space-y-4">
-        <div class="flex items-center gap-2 text-cyan-400 font-mono text-xs font-bold uppercase tracking-wider">
-          <i data-lucide="sparkles" class="w-4 h-4"></i>
+      <section class="surface-card p-6 rounded-2xl space-y-4">
+        <div class="flex items-center gap-2 text-brand-700 font-mono text-xs font-bold uppercase tracking-wider">
+          <i data-lucide="sparkles" class="w-4 h-4 text-brand-600"></i>
           <span>Virtual CFO Strategic Diagnostic Summary</span>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs font-sans">
-          <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800">
-            <span class="font-bold text-white block mb-1">1. Break-Even Equilibrium</span>
-            <p class="text-slate-400 leading-relaxed">
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+            <span class="font-bold text-slate-900 block mb-1">1. Break-Even Equilibrium</span>
+            <p class="text-slate-600 leading-relaxed">
               Your BEP threshold is exactly <strong>200 units ($2,000.00)</strong>. At 300 units sold, you hold a healthy <strong>Margin of Safety (MoS) of 33.3%</strong>.
             </p>
           </div>
 
-          <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800">
-            <span class="font-bold text-white block mb-1">2. Unit Economics Precision</span>
-            <p class="text-slate-400 leading-relaxed">
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+            <span class="font-bold text-slate-900 block mb-1">2. Unit Economics Precision</span>
+            <p class="text-slate-600 leading-relaxed">
               Every unit yields <strong>$6.00 Contribution Margin (60.0%)</strong> with 150% markup. Pure net profit after overhead settlement is <strong>$2.00 per unit</strong>.
             </p>
           </div>
 
-          <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800">
-            <span class="font-bold text-white block mb-1">3. Strategic Action Levers</span>
-            <p class="text-slate-400 leading-relaxed">
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+            <span class="font-bold text-slate-900 block mb-1">3. Strategic Action Levers</span>
+            <p class="text-slate-600 leading-relaxed">
               Settle the $800 vendor balance within 10 days to capture a 2% early-settlement discount, and bundle high-margin add-ons to expand average order value.
             </p>
           </div>
@@ -365,4 +400,3 @@
   </script>
 </body>
 </html>
-
