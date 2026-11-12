@@ -67,41 +67,43 @@
       transition: all 0.3s ease;
     }
 
-    /* Floating Bob Animation */
+    /* Ambient Floating Bob Animation */
     @keyframes botFloat {
       0%, 100% { transform: translateY(0px); }
       50% { transform: translateY(-7px); }
     }
-    /* Shadow Pulse Animation */
-    @keyframes shadowPulse {
-      0%, 100% { transform: scaleX(1); opacity: 0.25; }
-      50% { transform: scaleX(0.75); opacity: 0.12; }
-    }
-    /* Briefcase/Arm Wiggle */
-    @keyframes botWave {
-      0%, 100% { transform: rotate(0deg); }
-      50% { transform: rotate(-8deg); }
-    }
-    /* Jump with Joy Celebration Animation (2 Seconds Duration) */
-    @keyframes jumpJoy {
-      0%, 100% { transform: translateY(0) scale(1, 1); }
-      25% { transform: translateY(-22px) scale(0.95, 1.08) rotate(3deg); }
-      50% { transform: translateY(0) scale(1.05, 0.95); }
-      75% { transform: translateY(-16px) scale(0.97, 1.04) rotate(-3deg); }
-    }
-
     .animate-bot-float {
       animation: botFloat 3s ease-in-out infinite;
     }
     .animate-bot-float-delayed {
       animation: botFloat 3.3s ease-in-out infinite 0.4s;
     }
+
+    /* Ambient Shadow Pulse */
+    @keyframes shadowPulse {
+      0%, 100% { transform: scaleX(1); opacity: 0.25; }
+      50% { transform: scaleX(0.75); opacity: 0.12; }
+    }
     .animate-shadow-pulse {
       animation: shadowPulse 3s ease-in-out infinite;
+    }
+
+    /* Briefcase/Arm Wiggle */
+    @keyframes botWave {
+      0%, 100% { transform: rotate(0deg); }
+      50% { transform: rotate(-8deg); }
     }
     .animate-bot-wave {
       transform-origin: bottom center;
       animation: botWave 2s ease-in-out infinite;
+    }
+
+    /* Jump with Joy Celebration Animation (2 Seconds Duration) */
+    @keyframes jumpJoy {
+      0%, 100% { transform: translateY(0) scale(1, 1); }
+      25% { transform: translateY(-22px) scale(0.95, 1.08) rotate(3deg); }
+      50% { transform: translateY(0) scale(1.05, 0.95); }
+      75% { transform: translateY(-16px) scale(0.97, 1.04) rotate(-3deg); }
     }
     .jumping-joy {
       animation: jumpJoy 0.45s ease-in-out infinite !important;
@@ -139,7 +141,7 @@
           <i data-lucide="layout-dashboard" class="w-4 h-4 text-brand-600"></i>
           <span>Client Workspace</span>
         </a>
-        <a href="#pricing" class="inline-flex items-center gap-2 px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-white bg-brand-600 hover:bg-brand-700 rounded-lg shadow-sm hover:shadow-md transition-all">
+        <a href="https://buy.stripe.com/bJe14p8Va3LYgWGbJ81sQ09" class="inline-flex items-center gap-2 px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-white bg-brand-600 hover:bg-brand-700 rounded-lg shadow-sm hover:shadow-md transition-all">
           <span>7-Day Trial ($0 Today)</span>
         </a>
       </div>
@@ -162,13 +164,13 @@
       </h1>
 
       <p class="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed mb-10">
-        Stop logging receipts manually or guessing profit margins. Forward your PDF bills via email or snap photos in WhatsApp—Vortex AI balances your general ledger and delivers C-suite financial diagnostics around the clock.
+        Stop logging receipts manually or guessing profit margins. Forward your PDF bills via email or snap photos in Telegram—Vortex AI balances your general ledger and delivers C-suite financial diagnostics around the clock.
       </p>
 
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a href="#pricing" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-sm shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2">
-          <span>Explore Digital Workforce</span>
-          <i data-lucide="arrow-down" class="w-4 h-4"></i>
+        <a href="https://buy.stripe.com/bJe14p8Va3LYgWGbJ81sQ09" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-sm shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2">
+          <span>Activate 7-Day Free Trial (Verify Card - $0 Due)</span>
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
         </a>
         <button onclick="openVoiceflowChat()" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-white border border-slate-300 text-slate-700 font-semibold text-sm hover:bg-slate-50 transition-all flex items-center justify-center gap-2">
           <i data-lucide="message-square" class="w-4 h-4 text-brand-600"></i>
@@ -184,11 +186,128 @@
         </div>
         <div class="flex items-center gap-2">
           <i data-lucide="smartphone" class="w-4 h-4 text-brand-600"></i>
-          <span>No-Login Ingestion (WhatsApp & Email)</span>
+          <span>No-Login Ingestion (Telegram & Email)</span>
         </div>
         <div class="flex items-center gap-2">
           <i data-lucide="shield-check" class="w-4 h-4 text-indigo-600"></i>
           <span>Stripe 256-bit Secure Encryption</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= WORK ARTIFACT SHOWCASE ================= -->
+  <section id="work-showcase" class="py-20 px-6 max-w-7xl mx-auto">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <span class="text-xs font-mono tracking-widest text-brand-600 uppercase font-bold">Verifiable Production Output</span>
+      <h2 class="text-3xl font-extrabold text-slate-900 mt-2">See Exactly What Your AI Employee Delivers</h2>
+      <p class="text-slate-600 text-sm mt-3">From unstructured phone camera snapshots to balanced debits, credits, and C-suite KPI advisory.</p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <!-- Showcase Card 1: Mobile OCR Extraction -->
+      <div class="surface-card rounded-2xl p-6 flex flex-col justify-between">
+        <div>
+          <div class="w-10 h-10 rounded-xl bg-brand-50 flex items-center justify-center text-brand-600 mb-4 font-bold">
+            <i data-lucide="camera" class="w-5 h-5"></i>
+          </div>
+          <span class="text-xs font-mono uppercase text-slate-400 font-bold">Step 01: Ingestion</span>
+          <h3 class="text-lg font-bold text-slate-900 mt-1">Mobile Camera OCR Parser</h3>
+          <p class="text-xs text-slate-500 mt-2 mb-4">Client snaps a crumpled paper receipt at the store and sends it to Telegram.</p>
+          <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 font-mono text-xs text-slate-700 space-y-2">
+            <div class="text-[10px] text-slate-400 border-b border-slate-200 pb-1.5 flex justify-between">
+              <span>RAW_IMAGE: RECEIPT_KFC.JPG</span>
+              <span class="text-emerald-600 font-bold">CONFIDENCE: 99.8%</span>
+            </div>
+            <div class="text-slate-800 font-bold">Vendor: KFC Simpang Ampat</div>
+            <div class="flex justify-between text-slate-600">
+              <span>Cheezy Wedges (2x):</span>
+              <span>RM 11.00</span>
+            </div>
+            <div class="flex justify-between text-slate-600">
+              <span>15PC Chicken Combo:</span>
+              <span>RM 62.70</span>
+            </div>
+            <div class="border-t border-slate-200 pt-1 flex justify-between font-bold text-slate-900">
+              <span>Total Paid (Cash):</span>
+              <span class="text-brand-600">RM 73.70</span>
+            </div>
+          </div>
+        </div>
+        <div class="mt-6 flex items-center gap-2 text-xs font-medium text-brand-600">
+          <i data-lucide="check" class="w-4 h-4"></i>
+          <span>Extracted in 1.2 seconds</span>
+        </div>
+      </div>
+
+      <!-- Showcase Card 2: Double-Entry Journal -->
+      <div class="surface-card rounded-2xl p-6 flex flex-col justify-between">
+        <div>
+          <div class="w-10 h-10 rounded-xl bg-indigo-50 flex items-center justify-center text-indigo-600 mb-4 font-bold">
+            <i data-lucide="book-open" class="w-5 h-5"></i>
+          </div>
+          <span class="text-xs font-mono uppercase text-slate-400 font-bold">Step 02: Ledger Posting</span>
+          <h3 class="text-lg font-bold text-slate-900 mt-1">Double-Entry Journal & Ledger</h3>
+          <p class="text-xs text-slate-500 mt-2 mb-4">Transactions automatically posted to correct asset and expense accounts with zero human error.</p>
+          <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 font-mono text-xs text-slate-700 space-y-2">
+            <div class="text-[10px] text-slate-400 border-b border-slate-200 pb-1.5 flex justify-between">
+              <span>JOURNAL ENTRY #018</span>
+              <span class="text-indigo-600 font-bold">BALANCED: YES</span>
+            </div>
+            <div class="flex justify-between text-slate-800">
+              <span>DR: Staff Meals & Welfare</span>
+              <span class="font-bold text-slate-900">RM 73.70</span>
+            </div>
+            <div class="flex justify-between text-slate-600 pl-4">
+              <span>CR: Cash on Hand</span>
+              <span class="font-bold text-slate-900">RM 73.70</span>
+            </div>
+            <div class="border-t border-slate-200 pt-1 flex justify-between text-[11px] text-slate-500">
+              <span>Accounting Equation Check:</span>
+              <span class="text-emerald-600 font-bold">Debit = Credit ($73.70)</span>
+            </div>
+          </div>
+        </div>
+        <div class="mt-6 flex items-center gap-2 text-xs font-medium text-indigo-600">
+          <i data-lucide="check" class="w-4 h-4"></i>
+          <span>100% Balanced Ledger Equation</span>
+        </div>
+      </div>
+
+      <!-- Showcase Card 3: Executive CFO Diagnostics -->
+      <div class="surface-card rounded-2xl p-6 flex flex-col justify-between">
+        <div>
+          <div class="w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center text-emerald-600 mb-4 font-bold">
+            <i data-lucide="trending-up" class="w-5 h-5"></i>
+          </div>
+          <span class="text-xs font-mono uppercase text-slate-400 font-bold">Step 03: Executive Advice</span>
+          <h3 class="text-lg font-bold text-slate-900 mt-1">C-Suite Margin & BEP Briefing</h3>
+          <p class="text-xs text-slate-500 mt-2 mb-4">Vortex Virtual CFO computes your unit economics and suggests immediate cost-reduction levers.</p>
+          <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 font-mono text-xs text-slate-700 space-y-2">
+            <div class="text-[10px] text-slate-400 border-b border-slate-200 pb-1.5 flex justify-between">
+              <span>DIAGNOSTIC REPORT #CFO-88</span>
+              <span class="text-brand-600 font-bold">STATUS: ACTIONABLE</span>
+            </div>
+            <div class="flex justify-between text-slate-800">
+              <span>Gross Margin:</span>
+              <span class="font-bold text-emerald-600">60.0% (Healthy)</span>
+            </div>
+            <div class="flex justify-between text-slate-800">
+              <span>Monthly Break-Even:</span>
+              <span class="font-bold text-slate-900">200 Units (RM 2,000)</span>
+            </div>
+            <div class="flex justify-between text-slate-800">
+              <span>Markup Percentage:</span>
+              <span class="font-bold text-brand-600">150.0% on Ingredients</span>
+            </div>
+            <div class="border-t border-slate-200 pt-1 text-[11px] text-slate-500">
+              <span>Action: Stable contribution margin achieved across all active batches.</span>
+            </div>
+          </div>
+        </div>
+        <div class="mt-6 flex items-center gap-2 text-xs font-medium text-emerald-600">
+          <i data-lucide="check" class="w-4 h-4"></i>
+          <span>Delivered directly to Telegram / Web</span>
         </div>
       </div>
     </div>
@@ -199,10 +318,10 @@
     <div class="text-center max-w-3xl mx-auto mb-16">
       <span class="text-xs font-mono tracking-widest text-brand-600 uppercase font-bold">Autonomous Staffing Matrix</span>
       <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">Hire Your Digital Accounting Department</h2>
-      <p class="text-slate-600 text-sm mt-3">Why pay $2,500/month for a junior clerk? Deploy calibrated autonomous staff with specialized scopes, real-time ledgers, and zero payroll friction.</p>
+      <p class="text-slate-600 text-sm mt-3">Why pay $2,500/month for a manual clerk? Deploy autonomous digital staff with verified scopes, real-time ledgers, and zero payroll friction.</p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
 
       <!-- ================= PACKAGE 1: STARTER ($59/mo) ================= -->
       <div class="surface-card rounded-2xl p-8 flex flex-col justify-between" id="card-starter">
@@ -279,7 +398,7 @@
             <h4 class="text-xs font-mono uppercase text-slate-400 font-bold mb-2">Operational Limits:</h4>
             <ul class="text-xs text-slate-600 space-y-1.5 font-mono">
               <li>• Capacity: 70 verified expense receipts / month</li>
-              <li>• Sales Uploads: Unlimited CSV summary records</li>
+              <li>• Sales Data: Unlimited POS CSV upload</li>
               <li>• Books: Real-time Google Sheets general journal</li>
               <li>• Best For: Solo founders & boutique retail shops</li>
             </ul>
@@ -288,8 +407,8 @@
 
         <!-- Action Button with Lock State -->
         <button id="btn-starter" onclick="handleHire('starter')" class="w-full py-4 rounded-xl bg-slate-900 hover:bg-brand-600 text-white font-bold text-xs uppercase tracking-wider shadow-sm hover:shadow-md transition-all flex items-center justify-center gap-2">
-          <i data-lucide="lock" class="w-4 h-4 transition-transform lock-icon"></i>
-          <span class="btn-text">Unlock Junior Accountant ($59/mo)</span>
+          <i id="icon-starter" data-lucide="lock" class="w-4 h-4 transition-transform lock-icon"></i>
+          <span id="text-starter" class="btn-text">Unlock Junior Accountant ($59/mo)</span>
         </button>
       </div>
 
@@ -319,6 +438,7 @@
                   <rect x="89" y="82" width="8" height="4" rx="1" stroke="#78350F" stroke-width="1.5" fill="none"/>
                 </svg>
               </div>
+
               <!-- Bot 2: Financial Analyst -->
               <div class="relative w-20 h-24 animate-bot-float-delayed">
                 <svg viewBox="0 0 120 120" class="w-full h-full drop-shadow-md" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -366,7 +486,7 @@
               </li>
               <li class="flex items-start gap-2.5">
                 <i data-lucide="check" class="w-4 h-4 text-brand-600 shrink-0 mt-0.5"></i>
-                <span><strong>WhatsApp Business Bot:</strong> Daily cash flow summaries and automated discrepancy alerts on mobile.</span>
+                <span><strong>Universal Ledger Mapping:</strong> Automatic categorization across 6 universal Chart of Accounts.</span>
               </li>
               <li class="flex items-start gap-2.5">
                 <i data-lucide="check" class="w-4 h-4 text-brand-600 shrink-0 mt-0.5"></i>
@@ -381,24 +501,29 @@
               <li>• Capacity: 250 verified receipts / month</li>
               <li>• Team Seats: 3 active members (Owner + Manager + Staff)</li>
               <li>• Priority Engine: Sub-second GPT-4o reasoning speed</li>
-              <li>• Best For: Scaling SMEs, F&B outlets & growing service firms</li>
+              <li>• Best For: Scaling SMEs, F&B outlets, retail & growing service firms</li>
             </ul>
           </div>
         </div>
 
         <!-- Action Button with Lock State -->
         <button id="btn-pro" onclick="handleHire('pro')" class="w-full py-4 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-extrabold text-xs uppercase tracking-wider shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2">
-          <i data-lucide="lock" class="w-4 h-4 transition-transform lock-icon"></i>
-          <span class="btn-text">Unlock Senior CFO ($199/mo)</span>
+          <i id="icon-pro" data-lucide="lock" class="w-4 h-4 transition-transform lock-icon"></i>
+          <span id="text-pro" class="btn-text">Unlock Senior CFO ($199/mo)</span>
         </button>
       </div>
 
-      <!-- ================= PACKAGE 3: ENTERPRISE ($499/mo) ================= -->
-      <div class="surface-card rounded-2xl p-8 flex flex-col justify-between" id="card-enterprise">
+      <!-- ================= PACKAGE 3: ENTERPRISE ($499/mo) - COMING SOON ================= -->
+      <div class="surface-card rounded-2xl p-8 flex flex-col justify-between border-slate-300 bg-slate-50/60 relative overflow-hidden" id="card-enterprise">
+        <!-- Floating Coming Soon Ribbon -->
+        <div class="absolute -top-3.5 right-6 bg-slate-800 text-amber-300 text-[10px] font-extrabold tracking-widest uppercase px-3 py-1 rounded-full shadow-sm border border-slate-700">
+          Coming Soon • Q3
+        </div>
+
         <div>
-          <!-- Mascot 3: 5-Bot Department Crew -->
+          <!-- Mascot: Full Department (5 Bots) -->
           <div class="flex flex-col items-center justify-center py-2 mb-4 relative" id="mascot-wrapper-enterprise">
-            <div id="mascot-enterprise" class="relative w-48 h-24 flex items-center justify-center">
+            <div id="mascot-enterprise" class="relative w-48 h-24 flex items-center justify-center opacity-85">
               <!-- Back Row: 2 Assist Bots -->
               <div class="absolute -top-1 flex gap-12 opacity-80 scale-75 animate-bot-float-delayed">
                 <div class="w-12 h-12 bg-slate-800 rounded-2xl flex items-center justify-center border border-slate-700 shadow-sm text-xs">
@@ -408,12 +533,14 @@
                   📊
                 </div>
               </div>
+
               <!-- Front Row: 3 Lead Bots -->
               <div class="flex items-center gap-2 z-10 animate-bot-float">
                 <div class="w-12 h-14 bg-indigo-950 border border-indigo-500/40 rounded-xl flex flex-col items-center justify-center shadow-md">
                   <span class="w-2 h-2 rounded-full bg-indigo-400 mb-1 animate-pulse"></span>
                   <span class="text-[9px] font-bold text-indigo-200">TAX</span>
                 </div>
+
                 <div class="w-14 h-16 bg-slate-900 border-2 border-brand-400 rounded-2xl flex flex-col items-center justify-center shadow-lg shadow-brand-500/20 scale-105">
                   <div class="flex gap-1 mb-1">
                     <span class="w-1.5 h-1.5 rounded-full bg-brand-400"></span>
@@ -421,6 +548,7 @@
                   </div>
                   <span class="text-[9px] font-mono font-extrabold text-white tracking-wider bg-brand-600 px-1 rounded">CFO</span>
                 </div>
+
                 <div class="w-12 h-14 bg-emerald-950 border border-emerald-500/40 rounded-xl flex flex-col items-center justify-center shadow-md">
                   <span class="w-2 h-2 rounded-full bg-emerald-400 mb-1 animate-pulse"></span>
                   <span class="text-[9px] font-bold text-emerald-200">ERP</span>
@@ -435,40 +563,40 @@
 
           <div class="flex justify-between items-start mb-2">
             <div>
-              <span class="text-xs font-mono uppercase text-indigo-600 font-extrabold tracking-wider">Enterprise Division</span>
+              <span class="text-xs font-mono uppercase text-slate-500 font-extrabold tracking-wider">Enterprise Division</span>
               <h3 class="text-2xl font-extrabold text-slate-900 mt-0.5">Full Corporate Dept</h3>
             </div>
-            <span class="px-2.5 py-1 rounded-full bg-slate-100 text-[11px] font-semibold text-slate-700">5 - 20 Seats</span>
+            <span class="px-2.5 py-1 rounded-full bg-slate-200 text-[11px] font-semibold text-slate-700">5 - 20 Seats</span>
           </div>
 
-          <div class="my-6 pb-6 border-b border-slate-100">
-            <span class="text-5xl font-black text-slate-900">$499</span>
-            <span class="text-slate-500 text-sm font-medium">/ month</span>
-            <div class="text-xs text-slate-500 font-medium mt-1">Multi-branch enterprise infrastructure</div>
+          <div class="my-6 pb-6 border-b border-slate-200">
+            <span class="text-5xl font-black text-slate-400">$499</span>
+            <span class="text-slate-400 text-sm font-medium">/ month</span>
+            <div class="text-xs text-amber-700 font-semibold mt-1">Enterprise Waitlist Open • Pilot Launching Soon</div>
           </div>
 
           <div class="mb-6">
-            <h4 class="text-xs font-mono uppercase text-slate-400 font-bold mb-3">Key Responsibilities:</h4>
-            <ul class="text-xs text-slate-700 space-y-2.5">
+            <h4 class="text-xs font-mono uppercase text-slate-400 font-bold mb-3">Key Responsibilities (In Dev):</h4>
+            <ul class="text-xs text-slate-600 space-y-2.5">
               <li class="flex items-start gap-2.5">
-                <i data-lucide="check" class="w-4 h-4 text-indigo-600 shrink-0 mt-0.5"></i>
+                <i data-lucide="clock" class="w-4 h-4 text-slate-400 shrink-0 mt-0.5"></i>
                 <span><strong>Multi-Branch Consolidation:</strong> Aggregate books across up to 10 company branches or subsidiaries.</span>
               </li>
               <li class="flex items-start gap-2.5">
-                <i data-lucide="check" class="w-4 h-4 text-indigo-600 shrink-0 mt-0.5"></i>
-                <span><strong>Automated Audit Workpapers:</strong> Compliance schedules and closing entries formatted for external audit.</span>
+                <i data-lucide="clock" class="w-4 h-4 text-slate-400 shrink-0 mt-0.5"></i>
+                <span><strong>Bank Statement Reconciliation:</strong> Automatic PDF reconciliation against ledger entries.</span>
               </li>
               <li class="flex items-start gap-2.5">
-                <i data-lucide="check" class="w-4 h-4 text-indigo-600 shrink-0 mt-0.5"></i>
-                <span><strong>Custom POS / ERP Integration:</strong> Direct webhook pipelines into SQL, Xero, or custom databases.</span>
+                <i data-lucide="clock" class="w-4 h-4 text-slate-400 shrink-0 mt-0.5"></i>
+                <span><strong>Automated Audit Workpapers:</strong> Compliance schedules and closing entries formatted for external audit.</span>
               </li>
             </ul>
           </div>
 
-          <div class="mb-6 p-4 rounded-xl bg-slate-50 border border-slate-200">
+          <div class="mb-6 p-4 rounded-xl bg-white border border-slate-200">
             <h4 class="text-xs font-mono uppercase text-slate-400 font-bold mb-2">Operational Limits:</h4>
-            <ul class="text-xs text-slate-600 space-y-1.5 font-mono">
-              <li>• Capacity: Enterprise high-volume throughput</li>
+            <ul class="text-xs text-slate-500 space-y-1.5 font-mono">
+              <li>• Capacity: 600+ monthly documents</li>
               <li>• Team Seats: 5 to 20 organizational seats included</li>
               <li>• Support: Dedicated account director & SLA guarantee</li>
               <li>• Best For: Large franchises, conglomerates & holding groups</li>
@@ -476,10 +604,9 @@
           </div>
         </div>
 
-        <!-- Action Button with Lock State -->
-        <button id="btn-enterprise" onclick="handleHire('enterprise')" class="w-full py-4 rounded-xl bg-slate-900 hover:bg-indigo-600 text-white font-bold text-xs uppercase tracking-wider shadow-sm hover:shadow-md transition-all flex items-center justify-center gap-2">
-          <i data-lucide="lock" class="w-4 h-4 transition-transform lock-icon"></i>
-          <span class="btn-text">Unlock Corporate Dept ($499/mo)</span>
+        <button onclick="handleEnterpriseWaitlist()" class="w-full py-4 rounded-xl bg-slate-200 hover:bg-slate-300 text-slate-700 font-extrabold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2">
+          <i data-lucide="lock" class="w-4 h-4 text-slate-500"></i>
+          <span>Coming Soon • Join Waitlist</span>
         </button>
       </div>
 
@@ -518,12 +645,12 @@
     function handleHire(tier) {
       const button = document.getElementById(`btn-${tier}`);
       const mascot = document.getElementById(`mascot-${tier}`);
+      const icon = document.getElementById(`icon-${tier}`);
+      const text = document.getElementById(`text-${tier}`);
+
       if (!button || !mascot) return;
 
       // 1. Morph Lock Icon to Unlock
-      const icon = button.querySelector('.lock-icon');
-      const textSpan = button.querySelector('.btn-text');
-
       if (icon) {
         icon.setAttribute('data-lucide', 'unlock');
         lucide.createIcons();
@@ -532,8 +659,8 @@
       // 2. Change Button Style to Unlocked (Emerald Feedback)
       button.classList.remove('bg-slate-900', 'bg-brand-600', 'hover:bg-brand-600', 'hover:bg-brand-700', 'hover:bg-indigo-600');
       button.classList.add('bg-emerald-600', 'text-white', 'shadow-emerald-500/25');
-      if (textSpan) {
-        textSpan.innerText = 'Unlocked! Deploying Workforce...';
+      if (text) {
+        text.innerText = 'Unlocked! Deploying Workforce...';
       }
 
       // 3. Mini-workers jump with joy!
@@ -548,6 +675,11 @@
           alert('Billing configuration is updating. Please try again.');
         }
       }, 2000);
+    }
+
+    // Enterprise Waitlist Notification
+    function handleEnterpriseWaitlist() {
+      alert("Vortex AI Corporate Enterprise tier is currently in private pilot rollout for multi-branch organizations.\n\nPlease activate Pro Tier or consult our Virtual CFO to request early enterprise onboarding.");
     }
 
     // Open Voiceflow Webchat
@@ -578,3 +710,4 @@
   </script>
 </body>
 </html>
+
