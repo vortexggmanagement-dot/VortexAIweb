@@ -1,10 +1,10 @@
 html
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="ms" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vortex AI | Autonomous Digital Accounting Employee & Corporate Strategy</title>
+  <title>Vortex AI | Kakitangan Perakaunan Digital Autonomi & Strategi Korporat</title>
   <meta name="description" content="AI-driven autonomous accounting staff and virtual CFO. Turn daily receipts and invoices into double-entry ledgers, break-even analytics, and balanced financial statements." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -52,67 +52,130 @@ html
       75% { transform: translateY(-16px) scale(0.97, 1.04) rotate(-3deg); }
     }
     .jumping-joy { animation: jumpJoy 0.45s ease-in-out infinite !important; }
+    [data-i18n-en] { display: none; }
+    .lang-en [data-i18n-ms] { display: none !important; }
+    .lang-en [data-i18n-en] { display: inline !important; }
+    .lang-en blockquote[data-i18n-en], 
+    .lang-en div[data-i18n-en], 
+    .lang-en p[data-i18n-en], 
+    .lang-en h1[data-i18n-en], 
+    .lang-en h2[data-i18n-en], 
+    .lang-en h3[data-i18n-en], 
+    .lang-en h4[data-i18n-en], 
+    .lang-en span.block[data-i18n-en],
+    .lang-en li[data-i18n-en] { display: block !important; }
+    .lang-en flex[data-i18n-en] { display: flex !important; }
   </style>
 </head>
-<body class="font-sans antialiased selection:bg-brand-500 selection:text-white">
+<body id="page-body" class="font-sans antialiased selection:bg-brand-500 selection:text-white">
 
   <!-- ================= TOP NAVIGATION ================= -->
-  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
       <div class="flex items-center gap-3">
         <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-indigo-600 flex items-center justify-center font-extrabold text-white shadow-md shadow-brand-500/20">V</div>
         <div class="flex flex-col">
           <span class="text-xl font-extrabold tracking-tight text-slate-900">VORTEX<span class="text-brand-600">.AI</span></span>
-          <span class="text-[10px] font-mono tracking-widest text-slate-500 uppercase -mt-0.5 font-semibold">Autonomous Digital Accounting</span>
+          <span class="text-[10px] font-mono tracking-widest text-slate-500 uppercase -mt-0.5 font-semibold" data-i18n-ms>Perakaunan Digital Autonomi</span>
+          <span class="text-[10px] font-mono tracking-widest text-slate-500 uppercase -mt-0.5 font-semibold" data-i18n-en>Autonomous Digital Accounting</span>
         </div>
       </div>
+
+      <!-- Center Nav Links -->
       <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
-        <a href="#roles" class="hover:text-brand-600 transition-colors">Employee Roles</a>
-        <a href="#work-showcase" class="hover:text-brand-600 transition-colors">Output Showcase</a>
-        <a href="#pricing" class="hover:text-brand-600 transition-colors">Hiring Tiers</a>
-      </nav>
-      <div class="flex items-center gap-3">
-        <a href="/dashboard.html" class="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-lg transition-all">
-          <i data-lucide="layout-dashboard" class="w-4 h-4 text-brand-600"></i>
-          <span>Client Workspace</span>
+        <a href="#work-showcase" class="hover:text-brand-600 transition-colors">
+          <span data-i18n-ms>Bukti Hasil Kerja</span>
+          <span data-i18n-en>Output Showcase</span>
         </a>
-        <a href="#pricing" class="inline-flex items-center gap-2 px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-white bg-brand-600 hover:bg-brand-700 rounded-lg shadow-sm hover:shadow-md transition-all">
-          <span>Daftar Sekarang (RM260/bln)</span>
+        <a href="#pricing" class="hover:text-brand-600 transition-colors">
+          <span data-i18n-ms>Pilihan Pakej</span>
+          <span data-i18n-en>Hiring Tiers</span>
+        </a>
+      </nav>
+
+      <!-- Right Actions & Bilingual Switcher -->
+      <div class="flex items-center gap-3">
+        <!-- Language Switcher Toggle -->
+        <div class="flex items-center bg-slate-100 p-1 rounded-lg border border-slate-200">
+          <button id="btn-lang-ms" onclick="switchLanguage('ms')" class="px-2.5 py-1 text-xs font-bold rounded-md bg-white text-brand-600 shadow-sm transition-all flex items-center gap-1">
+            <span>🇲🇾 BM</span>
+          </button>
+          <button id="btn-lang-en" onclick="switchLanguage('en')" class="px-2.5 py-1 text-xs font-bold rounded-md text-slate-500 hover:text-slate-800 transition-all flex items-center gap-1">
+            <span>🇬🇧 EN</span>
+          </button>
+        </div>
+
+        <a href="#pricing" class="hidden sm:inline-flex items-center gap-2 px-4 py-2.5 text-xs font-bold uppercase tracking-wider text-white bg-brand-600 hover:bg-brand-700 rounded-lg shadow-sm hover:shadow-md transition-all">
+          <span data-i18n-ms>Daftar Starter (RM260)</span>
+          <span data-i18n-en>Deploy Starter (RM260)</span>
         </a>
       </div>
     </div>
   </header>
 
   <!-- ================= HERO SECTION ================= -->
-  <section class="relative pt-20 pb-20 px-6 text-center bg-gradient-to-b from-white via-slate-50 to-slate-100 border-b border-slate-200">
+  <section class="relative pt-16 pb-20 px-6 text-center bg-gradient-to-b from-white via-slate-50 to-slate-100 border-b border-slate-200">
     <div class="max-w-4xl mx-auto">
+      
+      <!-- Core Version Tag -->
       <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-50 border border-brand-200 text-xs font-semibold text-brand-700 mb-8 shadow-sm">
         <span class="w-2 h-2 rounded-full bg-brand-500 animate-pulse"></span>
-        <span>Vortex AI Core v3.0 • Autonomous Accounting Employee</span>
+        <span data-i18n-ms>Vortex AI Core v3.0 • Staf Perakaunan Digital Autonomi</span>
+        <span data-i18n-en>Vortex AI Core v3.0 • Autonomous Accounting Employee</span>
       </div>
+
+      <!-- Main Headline -->
       <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-slate-900 leading-[1.15] mb-6">
-        Hire an Autonomous AI Accountant. <br/>
+        <span data-i18n-ms>Gajikan Jurukira AI Pintar Anda.</span>
+        <span data-i18n-en>Hire an Autonomous AI Accountant.</span>
+        <br/>
         <span class="bg-clip-text text-transparent bg-gradient-to-r from-brand-600 via-indigo-600 to-slate-800">
-          Zero Manual Entry. 100% Balanced Books.
+          <span data-i18n-ms>Sifar Data Manual. 100% Lejar Berimbang.</span>
+          <span data-i18n-en>Zero Manual Entry. 100% Balanced Books.</span>
         </span>
       </h1>
-      <p class="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed mb-10">
-        Hentikan kemasukan resit manual. Hantar gambar resit terus melalui Telegram—Vortex AI mengimbangi lejar anda secara automatik dan menyegerakkan data terus ke Google Sheets anda dalam masa nyata.
+
+      <!-- Subtitle Description -->
+      <p class="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed mb-10" data-i18n-ms>
+        Hentikan kemasukan resit secara manual atau meneka margin untung rugi. Hantar foto resit terus melalui Telegram—Vortex AI mengimbangi lejar anda secara automatik dan menyegerakkannya terus ke Google Sheets dalam masa nyata.
       </p>
+      <p class="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed mb-10" data-i18n-en>
+        Stop logging receipts manually or guessing profit margins. Simply snap and send bills via Telegram—Vortex AI balances your double-entry ledger and syncs live to Google Sheets around the clock.
+      </p>
+
+      <!-- CTA Buttons -->
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
         <a href="#pricing" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-sm shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2">
-          <span>Deploy Autonomous Staff (RM260/bln)</span>
+          <span data-i18n-ms>Gajikan Staf Digital (RM260/bln)</span>
+          <span data-i18n-en>Deploy Autonomous Staff (RM260/mo)</span>
           <i data-lucide="arrow-down" class="w-4 h-4"></i>
         </a>
         <button onclick="openVoiceflowChat()" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-white border border-slate-300 text-slate-700 font-semibold text-sm hover:bg-slate-50 transition-all flex items-center justify-center gap-2">
           <i data-lucide="message-square" class="w-4 h-4 text-brand-600"></i>
-          <span>Ask Live Virtual CFO</span>
+          <span data-i18n-ms>Tanya Virtual CFO Secara Langsung</span>
+          <span data-i18n-en>Ask Live Virtual CFO</span>
         </button>
       </div>
+
+      <!-- Trust Badges -->
       <div class="mt-14 pt-8 border-t border-slate-200/80 flex flex-wrap justify-center items-center gap-8 text-xs font-mono text-slate-500 font-medium">
-        <div class="flex items-center gap-2"><i data-lucide="check-check" class="w-4 h-4 text-emerald-600"></i><span>Double-Entry Standard</span></div>
-        <div class="flex items-center gap-2"><i data-lucide="table" class="w-4 h-4 text-brand-600"></i><span>Sync Terus ke Google Sheets</span></div>
-        <div class="flex items-center gap-2"><i data-lucide="shield-check" class="w-4 h-4 text-indigo-600"></i><span>Stripe 256-bit Secure Encryption</span></div>
+        <div class="flex items-center gap-2">
+          <i data-lucide="check-check" class="w-4 h-4 text-emerald-600"></i>
+          <span data-i18n-ms>Piawaian Double-Entry Seimbang</span>
+          <span data-i18n-en>Double-Entry Balanced Standard</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <i data-lucide="table" class="w-4 h-4 text-brand-600"></i>
+          <span data-i18n-ms>Penyegerakan Google Sheets Pantas</span>
+          <span data-i18n-en>Live Google Sheets Sync</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <i data-lucide="shield-check" class="w-4 h-4 text-indigo-600"></i>
+          <span data-i18n-ms>Penyulitan Selamat Stripe 256-bit</span>
+          <span data-i18n-en>Stripe 256-bit Secure Encryption</span>
+        </div>
       </div>
     </div>
   </section>
@@ -120,37 +183,62 @@ html
   <!-- ================= WORK ARTIFACT SHOWCASE ================= -->
   <section id="work-showcase" class="py-20 px-6 max-w-7xl mx-auto">
     <div class="text-center max-w-3xl mx-auto mb-16">
-      <span class="text-xs font-mono tracking-widest text-brand-600 uppercase font-bold">Verifiable Production Output</span>
-      <h2 class="text-3xl font-extrabold text-slate-900 mt-2">See Exactly What Your AI Employee Delivers</h2>
-      <p class="text-slate-600 text-sm mt-3">Daripada gambar resit kamera telefon pintar kepada lejar debit, kredit dan laporan penyata kewangan yang seimbang.</p>
+      <span class="text-xs font-mono tracking-widest text-brand-600 uppercase font-bold" data-i18n-ms>Bukti Hasil Pengeluaran Sebenar</span>
+      <span class="text-xs font-mono tracking-widest text-brand-600 uppercase font-bold" data-i18n-en>Verifiable Production Output</span>
+      <h2 class="text-3xl font-extrabold text-slate-900 mt-2">
+        <span data-i18n-ms>Lihat Hasil Kerja Automatik Staf AI Anda</span>
+        <span data-i18n-en>See Exactly What Your AI Employee Delivers</span>
+      </h2>
+      <p class="text-slate-600 text-sm mt-3" data-i18n-ms>Daripada gambar kamera telefon pintar kepada lejar berimbang, rekod Google Sheets dan analisis kewangan terperinci.</p>
+      <p class="text-slate-600 text-sm mt-3" data-i18n-en>From raw smartphone receipt snapshots to balanced debits, credits, Google Sheets sync, and executive insights.</p>
     </div>
+
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      
+      <!-- Step 1 -->
       <div class="surface-card rounded-2xl p-6 flex flex-col justify-between">
         <div>
           <div class="w-10 h-10 rounded-xl bg-brand-50 flex items-center justify-center text-brand-600 mb-4 font-bold"><i data-lucide="camera" class="w-5 h-5"></i></div>
-          <span class="text-xs font-mono uppercase text-slate-400 font-bold">Step 01: Ingestion</span>
-          <h3 class="text-lg font-bold text-slate-900 mt-1">Mobile Camera OCR Parser</h3>
-          <p class="text-xs text-slate-500 mt-2 mb-4">Pengguna merakam resit belian dan terus menghantarnya ke bot Telegram.</p>
+          <span class="text-xs font-mono uppercase text-slate-400 font-bold" data-i18n-ms>Langkah 01: Ekstraksi Data</span>
+          <span class="text-xs font-mono uppercase text-slate-400 font-bold" data-i18n-en>Step 01: Ingestion</span>
+          <h3 class="text-lg font-bold text-slate-900 mt-1" data-i18n-ms>OCR Kamera Resit Telegram</h3>
+          <h3 class="text-lg font-bold text-slate-900 mt-1" data-i18n-en>Mobile Camera OCR Parser</h3>
+          <p class="text-xs text-slate-500 mt-2 mb-4" data-i18n-ms>Rakam foto resit belian fizikal dan terus hantar ke bot Telegram tanpa perlu login portal.</p>
+          <p class="text-xs text-slate-500 mt-2 mb-4" data-i18n-en>Snap crumpled paper receipts and forward straight to Telegram with zero login friction.</p>
+
           <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 font-mono text-xs text-slate-700 space-y-2">
             <div class="text-[10px] text-slate-400 border-b border-slate-200 pb-1.5 flex justify-between">
               <span>RAW_IMAGE: RECEIPT_KFC.JPG</span>
-              <span class="text-emerald-600 font-bold">CONFIDENCE: 99.8%</span>
+              <span class="text-emerald-600 font-bold">ACCURACY: 99.8%</span>
             </div>
             <div class="text-slate-800 font-bold">Vendor: KFC Simpang Ampat</div>
             <div class="flex justify-between text-slate-600"><span>Cheezy Wedges (2x):</span><span>RM 11.00</span></div>
             <div class="flex justify-between text-slate-600"><span>15PC Chicken Combo:</span><span>RM 62.70</span></div>
-            <div class="border-t border-slate-200 pt-1 flex justify-between font-bold text-slate-900"><span>Total Paid (Cash):</span><span class="text-brand-600">RM 73.70</span></div>
+            <div class="border-t border-slate-200 pt-1 flex justify-between font-bold text-slate-900">
+              <span data-i18n-ms>Jumlah Bayaran (Tunai):</span>
+              <span data-i18n-en>Total Paid (Cash):</span>
+              <span class="text-brand-600">RM 73.70</span>
+            </div>
           </div>
         </div>
-        <div class="mt-6 flex items-center gap-2 text-xs font-medium text-brand-600"><i data-lucide="check" class="w-4 h-4"></i><span>Diekstrak dalam 1.2 saat</span></div>
+        <div class="mt-6 flex items-center gap-2 text-xs font-medium text-brand-600">
+          <i data-lucide="check" class="w-4 h-4"></i>
+          <span data-i18n-ms>Diekstrak dalam 1.2 saat</span>
+          <span data-i18n-en>Parsed in 1.2 seconds</span>
+        </div>
       </div>
 
+      <!-- Step 2 -->
       <div class="surface-card rounded-2xl p-6 flex flex-col justify-between">
         <div>
           <div class="w-10 h-10 rounded-xl bg-indigo-50 flex items-center justify-center text-indigo-600 mb-4 font-bold"><i data-lucide="book-open" class="w-5 h-5"></i></div>
-          <span class="text-xs font-mono uppercase text-slate-400 font-bold">Step 02: Ledger Posting</span>
-          <h3 class="text-lg font-bold text-slate-900 mt-1">Double-Entry Journal & Ledger</h3>
-          <p class="text-xs text-slate-500 mt-2 mb-4">Transaksi diposkan secara automatik ke akaun aset dan perbelanjaan tanpa kesilapan manusia.</p>
+          <span class="text-xs font-mono uppercase text-slate-400 font-bold" data-i18n-ms>Langkah 02: Catatan Lejar</span>
+          <span class="text-xs font-mono uppercase text-slate-400 font-bold" data-i18n-en>Step 02: Ledger Posting</span>
+          <h3 class="text-lg font-bold text-slate-900 mt-1" data-i18n-ms>Jurnal & Lejar Double-Entry</h3>
+          <h3 class="text-lg font-bold text-slate-900 mt-1" data-i18n-en>Double-Entry Journal & Ledger</h3>
+          <p class="text-xs text-slate-500 mt-2 mb-4" data-i18n-ms>Transaksi dimasukkan secara automatik ke akaun perbelanjaan dan tunai secara berimbang.</p>
+          <p class="text-xs text-slate-500 mt-2 mb-4" data-i18n-en>Transactions automatically posted into balanced debit and credit expense accounts without error.</p>
+
           <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 font-mono text-xs text-slate-700 space-y-2">
             <div class="text-[10px] text-slate-400 border-b border-slate-200 pb-1.5 flex justify-between">
               <span>JOURNAL ENTRY #018</span>
@@ -158,49 +246,90 @@ html
             </div>
             <div class="flex justify-between text-slate-800"><span>DR: Staff Meals & Welfare</span><span class="font-bold text-slate-900">RM 73.70</span></div>
             <div class="flex justify-between text-slate-600 pl-4"><span>CR: Cash on Hand</span><span class="font-bold text-slate-900">RM 73.70</span></div>
-            <div class="border-t border-slate-200 pt-1 flex justify-between text-[11px] text-slate-500"><span>Persamaan Perakaunan:</span><span class="text-emerald-600 font-bold">Debit = Credit (RM 73.70)</span></div>
+            <div class="border-t border-slate-200 pt-1 flex justify-between text-[11px] text-slate-500">
+              <span data-i18n-ms>Persamaan Lejar:</span>
+              <span data-i18n-en>Equation Check:</span>
+              <span class="text-emerald-600 font-bold">Debit = Credit (RM 73.70)</span>
+            </div>
           </div>
         </div>
-        <div class="mt-6 flex items-center gap-2 text-xs font-medium text-indigo-600"><i data-lucide="check" class="w-4 h-4"></i><span>100% Lejar Berimbang Automatik</span></div>
+        <div class="mt-6 flex items-center gap-2 text-xs font-medium text-indigo-600">
+          <i data-lucide="check" class="w-4 h-4"></i>
+          <span data-i18n-ms>100% Lejar Berimbang Serta-merta</span>
+          <span data-i18n-en>100% Balanced Ledger Equation</span>
+        </div>
       </div>
 
+      <!-- Step 3 -->
       <div class="surface-card rounded-2xl p-6 flex flex-col justify-between">
         <div>
           <div class="w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center text-emerald-600 mb-4 font-bold"><i data-lucide="trending-up" class="w-5 h-5"></i></div>
-          <span class="text-xs font-mono uppercase text-slate-400 font-bold">Step 03: Executive Advice</span>
-          <h3 class="text-lg font-bold text-slate-900 mt-1">C-Suite Margin & BEP Briefing</h3>
-          <p class="text-xs text-slate-500 mt-2 mb-4">Vortex Virtual CFO mengira ekonomi unit dan mencadangkan langkah pengoptimuman margin segera.</p>
+          <span class="text-xs font-mono uppercase text-slate-400 font-bold" data-i18n-ms>Langkah 03: Pandangan Eksekutif</span>
+          <span class="text-xs font-mono uppercase text-slate-400 font-bold" data-i18n-en>Step 03: Executive Advice</span>
+          <h3 class="text-lg font-bold text-slate-900 mt-1" data-i18n-ms>Analisis Margin & Titik Pulang Modal</h3>
+          <h3 class="text-lg font-bold text-slate-900 mt-1" data-i18n-en>C-Suite Margin & BEP Briefing</h3>
+          <p class="text-xs text-slate-500 mt-2 mb-4" data-i18n-ms>Virtual CFO mengira ekonomi unit dan mengesyorkan langkah penjimatan kos operasi.</p>
+          <p class="text-xs text-slate-500 mt-2 mb-4" data-i18n-en>Vortex Virtual CFO computes your unit economics and suggests immediate cost-reduction levers.</p>
+
           <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 font-mono text-xs text-slate-700 space-y-2">
             <div class="text-[10px] text-slate-400 border-b border-slate-200 pb-1.5 flex justify-between">
-              <span>DIAGNOSTIC REPORT #CFO-88</span>
-              <span class="text-brand-600 font-bold">STATUS: ACTIONABLE</span>
+              <span>REPORT #CFO-88</span>
+              <span class="text-brand-600 font-bold">STATUS: STABLE</span>
             </div>
-            <div class="flex justify-between text-slate-800"><span>Gross Margin:</span><span class="font-bold text-emerald-600">60.0% (Sihat)</span></div>
-            <div class="flex justify-between text-slate-800"><span>Monthly Break-Even:</span><span class="font-bold text-slate-900">200 Units (RM 2,000)</span></div>
-            <div class="flex justify-between text-slate-800"><span>Markup Percentage:</span><span class="font-bold text-brand-600">150.0% on Ingredients</span></div>
-            <div class="border-t border-slate-200 pt-1 text-[11px] text-slate-500"><span>Tindakan: Margin caruman stabil di semua cawangan aktif.</span></div>
+            <div class="flex justify-between text-slate-800">
+              <span data-i18n-ms>Margin Kasar:</span>
+              <span data-i18n-en>Gross Margin:</span>
+              <span class="font-bold text-emerald-600">60.0%</span>
+            </div>
+            <div class="flex justify-between text-slate-800">
+              <span data-i18n-ms>Pulang Modal Bulanan:</span>
+              <span data-i18n-en>Monthly Break-Even:</span>
+              <span class="font-bold text-slate-900">200 Units</span>
+            </div>
+            <div class="flex justify-between text-slate-800">
+              <span data-i18n-ms>Penandaan Bahan Mentah:</span>
+              <span data-i18n-en>Markup Percentage:</span>
+              <span class="font-bold text-brand-600">150.0%</span>
+            </div>
+            <div class="border-t border-slate-200 pt-1 text-[11px] text-slate-500" data-i18n-ms>Tindakan: Margin caruman stabil di semua cawangan.</div>
+            <div class="border-t border-slate-200 pt-1 text-[11px] text-slate-500" data-i18n-en>Action: Contribution margin healthy across operations.</div>
           </div>
         </div>
-        <div class="mt-6 flex items-center gap-2 text-xs font-medium text-emerald-600"><i data-lucide="check" class="w-4 h-4"></i><span>Dihantar terus ke Telegram / Web</span></div>
+        <div class="mt-6 flex items-center gap-2 text-xs font-medium text-emerald-600">
+          <i data-lucide="check" class="w-4 h-4"></i>
+          <span data-i18n-ms>Dihantar terus ke Telegram / Sheets</span>
+          <span data-i18n-en>Delivered directly to Telegram / Sheets</span>
+        </div>
       </div>
+
     </div>
   </section>
 
   <!-- ================= PRICING / HIRING SECTION ================= -->
   <section id="pricing" class="py-24 px-6 max-w-7xl mx-auto bg-white border-y border-slate-200">
     <div class="text-center max-w-3xl mx-auto mb-16">
-      <span class="text-xs font-mono tracking-widest text-brand-600 uppercase font-bold">Autonomous Staffing Matrix</span>
-      <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">Pilih Pakej Staf Digital Anda</h2>
-      <p class="text-slate-600 text-sm mt-3">Lupakan kos penggajian staf manual ribuan ringgit sebulan. Ambil staf digital pintar dengan lejar masa nyata dan sifar geseran penggajian.</p>
+      <span class="text-xs font-mono tracking-widest text-brand-600 uppercase font-bold" data-i18n-ms>Matriks Penggajian Autonomi</span>
+      <span class="text-xs font-mono tracking-widest text-brand-600 uppercase font-bold" data-i18n-en>Autonomous Staffing Matrix</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">
+        <span data-i18n-ms>Pilih Pakej Jabatan Akaun Digital Anda</span>
+        <span data-i18n-en>Hire Your Digital Accounting Department</span>
+      </h2>
+      <p class="text-slate-600 text-sm mt-3" data-i18n-ms>Jimatkan ribuan ringgit kos gaji kerani biasa. Gajikan pembantu akaun digital dengan lejar masa nyata dan sifar kelewatan.</p>
+      <p class="text-slate-600 text-sm mt-3" data-i18n-en>Why pay thousands for a manual clerk? Deploy autonomous digital staff with verified scopes, real-time ledgers, and zero payroll friction.</p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+      
       <!-- ================= PACKAGE 1: STARTER (RM260) - PALING POPULAR ================= -->
       <div class="hero-card rounded-2xl p-8 flex flex-col justify-between relative" id="card-starter">
-        <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-brand-600 to-indigo-600 text-white text-[10px] font-extrabold tracking-widest uppercase px-4 py-1 rounded-full shadow-md flex items-center gap-1.5">
-          <i data-lucide="sparkles" class="w-3 h-3 text-amber-300"></i>
-          <span>Paling Popular</span>
+        
+        <!-- Paling Popular Badge -->
+        <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-amber-500 via-orange-500 to-amber-600 text-white text-[11px] font-black tracking-wider uppercase px-4 py-1 rounded-full shadow-lg flex items-center gap-1.5 border border-amber-200/40">
+          <i data-lucide="sparkles" class="w-3.5 h-3.5 text-yellow-200 fill-yellow-200"></i>
+          <span data-i18n-ms>Paling Popular</span>
+          <span data-i18n-en>Most Popular</span>
         </div>
+
         <div>
           <!-- Mascot: Solo Junior Bot -->
           <div class="flex flex-col items-center justify-center py-2 mb-4 relative" id="mascot-wrapper-starter">
@@ -227,48 +356,83 @@ html
             </div>
             <div class="w-16 h-2 bg-slate-300 rounded-full animate-shadow-pulse -mt-1 blur-[1px]"></div>
             <span class="text-[11px] font-mono font-bold tracking-wider text-cyan-800 bg-cyan-50 px-3 py-0.5 rounded-full mt-2 border border-cyan-200">
-              1 JUNIOR BOOKKEEPER BOT
+              <span data-i18n-ms>1 BOT JURUKIRA JUNIOR</span>
+              <span data-i18n-en>1 JUNIOR BOOKKEEPER BOT</span>
             </span>
           </div>
 
           <div class="flex justify-between items-start mb-2">
             <div>
-              <span class="text-xs font-mono uppercase text-brand-600 font-extrabold tracking-wider">Pakej 1</span>
+              <span class="text-xs font-mono uppercase text-brand-600 font-extrabold tracking-wider">
+                <span data-i18n-ms>Pakej 1</span>
+                <span data-i18n-en>Package 1</span>
+              </span>
               <h3 class="text-2xl font-extrabold text-slate-900 mt-0.5">Starter</h3>
             </div>
-            <span class="px-2.5 py-1 rounded-full bg-brand-50 text-[11px] font-bold text-brand-700 border border-brand-200">1 Seat (Pemilik sahaja)</span>
+            <span class="px-2.5 py-1 rounded-full bg-brand-50 text-[11px] font-bold text-brand-700 border border-brand-200">
+              <span data-i18n-ms>1 Seat (Pemilik sahaja)</span>
+              <span data-i18n-en>1 Seat (Owner only)</span>
+            </span>
           </div>
 
           <div class="my-6 pb-6 border-b border-slate-100">
             <span class="text-5xl font-black text-slate-900">RM260</span>
-            <span class="text-slate-500 text-sm font-medium">/ bulan</span>
-            <div class="text-xs text-brand-600 font-semibold mt-1">Akses Penuh Serta-merta</div>
+            <span class="text-slate-500 text-sm font-medium">
+              <span data-i18n-ms>/ bulan</span>
+              <span data-i18n-en>/ month</span>
+            </span>
+            <div class="text-xs text-brand-600 font-semibold mt-1">
+              <span data-i18n-ms>Akses Penuh Serta-merta</span>
+              <span data-i18n-en>Instant Full Access</span>
+            </div>
           </div>
 
           <!-- Feature Breakdown -->
           <div class="space-y-4 mb-6">
             <div>
-              <h4 class="text-xs font-mono uppercase text-slate-400 font-bold mb-2">Had Kuota Bulanan:</h4>
+              <h4 class="text-xs font-mono uppercase text-slate-400 font-bold mb-2">
+                <span data-i18n-ms>Had Kuota Bulanan:</span>
+                <span data-i18n-en>Monthly Quota Limit:</span>
+              </h4>
               <div class="flex items-center gap-2 text-xs font-semibold text-slate-800 bg-slate-50 p-2.5 rounded-lg border border-slate-200">
                 <i data-lucide="receipt" class="w-4 h-4 text-brand-600"></i>
-                <span>100 resit / bulan</span>
+                <span data-i18n-ms>100 resit / bulan</span>
+                <span data-i18n-en>100 receipts / month</span>
               </div>
             </div>
 
             <div>
-              <h4 class="text-xs font-mono uppercase text-slate-400 font-bold mb-2">Tab Google Sheets Aktif:</h4>
-              <ul class="text-xs text-slate-700 space-y-1.5">
+              <h4 class="text-xs font-mono uppercase text-slate-400 font-bold mb-2">
+                <span data-i18n-ms>Tab Google Sheets Aktif:</span>
+                <span data-i18n-en>Active Google Sheets Tabs:</span>
+              </h4>
+              <ul class="text-xs text-slate-700 space-y-1.5 font-mono">
                 <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0"></i><span><strong>Dashboard Ringkasan</strong></span></li>
                 <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0"></i><span><strong>Receipt_Log</strong></span></li>
               </ul>
             </div>
 
             <div>
-              <h4 class="text-xs font-mono uppercase text-slate-400 font-bold mb-2">Skop Operasi:</h4>
+              <h4 class="text-xs font-mono uppercase text-slate-400 font-bold mb-2">
+                <span data-i18n-ms>Skop Operasi:</span>
+                <span data-i18n-en>Operational Scope:</span>
+              </h4>
               <ul class="text-xs text-slate-600 space-y-1.5">
-                <li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-600 shrink-0 mt-0.5"></i><span>Integrasi Bot Telegram Pantas</span></li>
-                <li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-600 shrink-0 mt-0.5"></i><span>Lejar Double-Entry & Baki Berjalan Masa Nyata</span></li>
-                <li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-600 shrink-0 mt-0.5"></i><span>Pautan Arkib Google Drive Auto-Vault</span></li>
+                <li class="flex items-start gap-2">
+                  <i data-lucide="check" class="w-3.5 h-3.5 text-brand-600 shrink-0 mt-0.5"></i>
+                  <span data-i18n-ms>Integrasi Telegram OCR Segera</span>
+                  <span data-i18n-en>Instant Telegram OCR Integration</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i data-lucide="check" class="w-3.5 h-3.5 text-brand-600 shrink-0 mt-0.5"></i>
+                  <span data-i18n-ms>Lejar Double-Entry & Baki Masa Nyata</span>
+                  <span data-i18n-en>Double-Entry Ledger & Real-Time Balance</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i data-lucide="check" class="w-3.5 h-3.5 text-brand-600 shrink-0 mt-0.5"></i>
+                  <span data-i18n-ms>Google Drive Receipt Auto-Vault</span>
+                  <span data-i18n-en>Google Drive Receipt Auto-Vault</span>
+                </li>
               </ul>
             </div>
           </div>
@@ -276,15 +440,21 @@ html
 
         <button id="btn-starter" onclick="handleHire('starter')" class="w-full py-4 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-extrabold text-xs uppercase tracking-wider shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2">
           <i id="icon-starter" data-lucide="lock" class="w-4 h-4 transition-transform lock-icon"></i>
-          <span id="text-starter" class="btn-text">Langgan Starter (RM260/bln)</span>
+          <span id="text-starter" class="btn-text">
+            <span data-i18n-ms>Langgan Starter (RM260/bln)</span>
+            <span data-i18n-en>Deploy Starter (RM260/mo)</span>
+          </span>
         </button>
       </div>
 
       <!-- ================= PACKAGE 2: PRO GROWTH (RM500) - COMING SOON ================= -->
       <div class="surface-card rounded-2xl p-8 flex flex-col justify-between border-slate-300 bg-slate-50/70 relative overflow-hidden" id="card-pro">
+        
+        <!-- Coming Soon Badge -->
         <div class="absolute -top-3.5 right-6 bg-slate-800 text-amber-300 text-[10px] font-extrabold tracking-widest uppercase px-3 py-1 rounded-full shadow-sm border border-slate-700">
-          Coming Soon • Pro Growth Tier
+          Coming Soon
         </div>
+
         <div>
           <!-- Mascot: Duo Senior Squad (Muted) -->
           <div class="flex flex-col items-center justify-center py-2 mb-4 relative opacity-75" id="mascot-wrapper-pro">
@@ -313,61 +483,92 @@ html
               </div>
             </div>
             <span class="text-[11px] font-mono font-bold tracking-wider text-slate-500 bg-slate-200 px-3 py-0.5 rounded-full mt-2">
-              SENIOR ACCOUNTANT + CFO BOT
+              <span data-i18n-ms>SENIOR ACCOUNTANT + CFO BOT</span>
+              <span data-i18n-en>SENIOR ACCOUNTANT + CFO BOT</span>
             </span>
           </div>
 
           <div class="flex justify-between items-start mb-2">
             <div>
-              <span class="text-xs font-mono uppercase text-slate-400 font-extrabold tracking-wider">Pakej 2</span>
+              <span class="text-xs font-mono uppercase text-slate-400 font-extrabold tracking-wider">
+                <span data-i18n-ms>Pakej 2</span>
+                <span data-i18n-en>Package 2</span>
+              </span>
               <h3 class="text-2xl font-extrabold text-slate-800 mt-0.5">Pro Growth</h3>
             </div>
-            <span class="px-2.5 py-1 rounded-full bg-slate-200 text-[11px] font-semibold text-slate-600">1 Seat (Pemilik / Akauntan)</span>
+            <span class="px-2.5 py-1 rounded-full bg-slate-200 text-[11px] font-semibold text-slate-600">
+              <span data-i18n-ms>1 Seat (Pemilik / Akauntan)</span>
+              <span data-i18n-en>1 Seat (Owner / Accountant)</span>
+            </span>
           </div>
 
           <div class="my-6 pb-6 border-b border-slate-200">
             <span class="text-5xl font-black text-slate-400">RM500</span>
-            <span class="text-slate-400 text-sm font-medium">/ bulan</span>
-            <div class="text-xs text-amber-700 font-semibold mt-1">Coming Soon • Senarai Menunggu Dibuka</div>
+            <span class="text-slate-400 text-sm font-medium">
+              <span data-i18n-ms>/ bulan</span>
+              <span data-i18n-en>/ month</span>
+            </span>
+            <div class="text-xs text-amber-700 font-semibold mt-1">
+              <span data-i18n-ms>Coming Soon • Senarai Menunggu Dibuka</span>
+              <span data-i18n-en>Coming Soon • Priority Waitlist Open</span>
+            </div>
           </div>
 
           <!-- Feature Breakdown -->
           <div class="space-y-4 mb-6">
             <div>
-              <h4 class="text-xs font-mono uppercase text-slate-400 font-bold mb-2">Had Kuota Bulanan:</h4>
+              <h4 class="text-xs font-mono uppercase text-slate-400 font-bold mb-2">
+                <span data-i18n-ms>Had Kuota Bulanan:</span>
+                <span data-i18n-en>Monthly Quota Limit:</span>
+              </h4>
               <div class="flex items-center gap-2 text-xs font-semibold text-slate-700 bg-slate-100 p-2.5 rounded-lg border border-slate-200">
                 <i data-lucide="receipt" class="w-4 h-4 text-slate-500"></i>
-                <span>200 resit / bulan</span>
+                <span data-i18n-ms>200 resit / bulan</span>
+                <span data-i18n-en>200 receipts / month</span>
               </div>
             </div>
 
             <div>
-              <h4 class="text-xs font-mono uppercase text-slate-400 font-bold mb-2">Tab Google Sheets Aktif:</h4>
-              <ul class="text-xs text-slate-600 space-y-1.5">
-                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-indigo-500 shrink-0"></i><span>Semua tab Pakej 1 (Dashboard + Receipt_Log)</span></li>
+              <h4 class="text-xs font-mono uppercase text-slate-400 font-bold mb-2">
+                <span data-i18n-ms>Tab Google Sheets Aktif:</span>
+                <span data-i18n-en>Active Google Sheets Tabs:</span>
+              </h4>
+              <ul class="text-xs text-slate-600 space-y-1.5 font-mono">
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-indigo-500 shrink-0"></i>
+                  <span data-i18n-ms>Semua tab Pakej 1 (Dashboard + Log)</span>
+                  <span data-i18n-en>All Package 1 tabs (Dashboard + Log)</span>
+                </li>
                 <li class="flex items-center gap-2"><i data-lucide="plus" class="w-4 h-4 text-brand-600 shrink-0"></i><span><strong>Profit_And_Loss</strong></span></li>
                 <li class="flex items-center gap-2"><i data-lucide="plus" class="w-4 h-4 text-brand-600 shrink-0"></i><span><strong>Trial_Balance</strong></span></li>
               </ul>
             </div>
 
             <div>
-              <h4 class="text-xs font-mono uppercase text-slate-400 font-bold mb-2">Ciri Tambahan:</h4>
-              <p class="text-xs text-slate-500">Diagnostik Margin & Break-Even Point (BEP) automatik oleh Virtual CFO secara berkala.</p>
+              <h4 class="text-xs font-mono uppercase text-slate-400 font-bold mb-2">
+                <span data-i18n-ms>Ciri Tambahan:</span>
+                <span data-i18n-en>Advanced Capabilities:</span>
+              </h4>
+              <p class="text-xs text-slate-500" data-i18n-ms>Diagnostik Margin & Break-Even Point (BEP) oleh Virtual CFO automatik secara berkala.</p>
+              <p class="text-xs text-slate-500" data-i18n-en>Virtual CFO Margin & Break-Even Point (BEP) contribution diagnostics.</p>
             </div>
           </div>
         </div>
 
         <button onclick="handleWaitlist('Pro Growth (RM500/bln)')" class="w-full py-4 rounded-xl bg-slate-200 hover:bg-slate-300 text-slate-700 font-extrabold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2">
           <i data-lucide="lock" class="w-4 h-4 text-slate-500"></i>
-          <span>Coming Soon • Sertai Senarai Menunggu</span>
+          <span data-i18n-ms>Coming Soon • Sertai Senarai Menunggu</span>
+          <span data-i18n-en>Coming Soon • Join Waitlist</span>
         </button>
       </div>
 
       <!-- ================= PACKAGE 3: ENTERPRISE / CFO (RM1,000) - COMING SOON ================= -->
       <div class="surface-card rounded-2xl p-8 flex flex-col justify-between border-slate-300 bg-slate-50/70 relative overflow-hidden" id="card-enterprise">
+        
+        <!-- Coming Soon Badge -->
         <div class="absolute -top-3.5 right-6 bg-slate-800 text-amber-300 text-[10px] font-extrabold tracking-widest uppercase px-3 py-1 rounded-full shadow-sm border border-slate-700">
-          Coming Soon • Enterprise / CFO
+          Coming Soon
         </div>
+
         <div>
           <!-- Mascot: Full Department (Muted) -->
           <div class="flex flex-col items-center justify-center py-2 mb-4 relative opacity-75">
@@ -377,55 +578,84 @@ html
               </div>
             </div>
             <span class="text-[11px] font-mono font-bold tracking-wider text-slate-500 bg-slate-200 px-3 py-0.5 rounded-full mt-2">
-              JABATAN KEWANGAN KORPORAT LENGKAP
+              <span data-i18n-ms>JABATAN KEWANGAN KORPORAT LENGKAP</span>
+              <span data-i18n-en>FULL CORPORATE FINANCE DEPT</span>
             </span>
           </div>
 
           <div class="flex justify-between items-start mb-2">
             <div>
-              <span class="text-xs font-mono uppercase text-slate-400 font-extrabold tracking-wider">Pakej 3</span>
+              <span class="text-xs font-mono uppercase text-slate-400 font-extrabold tracking-wider">
+                <span data-i18n-ms>Pakej 3</span>
+                <span data-i18n-en>Package 3</span>
+              </span>
               <h3 class="text-2xl font-extrabold text-slate-800 mt-0.5">Enterprise / CFO</h3>
             </div>
-            <span class="px-2.5 py-1 rounded-full bg-slate-200 text-[11px] font-semibold text-slate-600">1 – 5 Seats (Boleh diperluas sehingga 10)</span>
+            <span class="px-2.5 py-1 rounded-full bg-slate-200 text-[11px] font-semibold text-slate-600">
+              <span data-i18n-ms>1 – 5 Seats (Boleh diperluas sehingga 10)</span>
+              <span data-i18n-en>1 – 5 Seats (Expandable to 10)</span>
+            </span>
           </div>
 
           <div class="my-6 pb-6 border-b border-slate-200">
             <span class="text-5xl font-black text-slate-400">RM1,000</span>
-            <span class="text-slate-400 text-sm font-medium">/ bulan</span>
-            <div class="text-xs text-amber-700 font-semibold mt-1">Coming Soon • Pilot Enterprise Dibuka</div>
+            <span class="text-slate-400 text-sm font-medium">
+              <span data-i18n-ms>/ bulan</span>
+              <span data-i18n-en>/ month</span>
+            </span>
+            <div class="text-xs text-amber-700 font-semibold mt-1">
+              <span data-i18n-ms>Coming Soon • Pilot Enterprise Dibuka</span>
+              <span data-i18n-en>Coming Soon • Enterprise Pilot Waitlist</span>
+            </div>
           </div>
 
           <!-- Feature Breakdown -->
           <div class="space-y-4 mb-6">
             <div>
-              <h4 class="text-xs font-mono uppercase text-slate-400 font-bold mb-2">Had Kuota Bulanan:</h4>
+              <h4 class="text-xs font-mono uppercase text-slate-400 font-bold mb-2">
+                <span data-i18n-ms>Had Kuota Bulanan:</span>
+                <span data-i18n-en>Monthly Quota Limit:</span>
+              </h4>
               <div class="flex items-center gap-2 text-xs font-semibold text-slate-700 bg-slate-100 p-2.5 rounded-lg border border-slate-200">
                 <i data-lucide="receipt" class="w-4 h-4 text-slate-500"></i>
-                <span>500 resit / bulan</span>
+                <span data-i18n-ms>500 resit / bulan</span>
+                <span data-i18n-en>500 receipts / month</span>
               </div>
             </div>
 
             <div>
-              <h4 class="text-xs font-mono uppercase text-slate-400 font-bold mb-2">Tab Google Sheets Aktif:</h4>
-              <ul class="text-xs text-slate-600 space-y-1.5">
-                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-indigo-500 shrink-0"></i><span>Semua tab Pakej 2 (Dashboard, Log, P&L, Trial Balance)</span></li>
+              <h4 class="text-xs font-mono uppercase text-slate-400 font-bold mb-2">
+                <span data-i18n-ms>Tab Google Sheets Aktif:</span>
+                <span data-i18n-en>Active Google Sheets Tabs:</span>
+              </h4>
+              <ul class="text-xs text-slate-600 space-y-1.5 font-mono">
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-indigo-500 shrink-0"></i>
+                  <span data-i18n-ms>Semua tab Pakej 2 (Dashboard, Log, P&L, Trial Balance)</span>
+                  <span data-i18n-en>All Package 2 tabs (Dashboard, Log, P&L, Trial Balance)</span>
+                </li>
                 <li class="flex items-center gap-2"><i data-lucide="plus" class="w-4 h-4 text-brand-600 shrink-0"></i><span><strong>CFO_Metrics</strong></span></li>
                 <li class="flex items-center gap-2"><i data-lucide="plus" class="w-4 h-4 text-brand-600 shrink-0"></i><span><strong>Consolidated_P&L</strong></span></li>
               </ul>
             </div>
 
             <div>
-              <h4 class="text-xs font-mono uppercase text-slate-400 font-bold mb-2">Ciri Korporat:</h4>
-              <p class="text-xs text-slate-500">Konsolidasi multi-cawangan/entiti, rekonsiliasi penyata bank automatik, dan sokongan SLA terdedikasi.</p>
+              <h4 class="text-xs font-mono uppercase text-slate-400 font-bold mb-2">
+                <span data-i18n-ms>Ciri Korporat:</span>
+                <span data-i18n-en>Enterprise Division:</span>
+              </h4>
+              <p class="text-xs text-slate-500" data-i18n-ms>Konsolidasi multi-cawangan/entiti, rekonsiliasi penyata bank automatik, dan sokongan SLA terdedikasi.</p>
+              <p class="text-xs text-slate-500" data-i18n-en>Multi-branch/entity consolidation, automated bank statement PDF reconciliations, and dedicated SLA.</p>
             </div>
           </div>
         </div>
 
         <button onclick="handleWaitlist('Enterprise / CFO (RM1,000/bln)')" class="w-full py-4 rounded-xl bg-slate-200 hover:bg-slate-300 text-slate-700 font-extrabold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2">
           <i data-lucide="lock" class="w-4 h-4 text-slate-500"></i>
-          <span>Coming Soon • Sertai Senarai Menunggu</span>
+          <span data-i18n-ms>Coming Soon • Sertai Senarai Menunggu</span>
+          <span data-i18n-en>Coming Soon • Join Waitlist</span>
         </button>
       </div>
+
     </div>
   </section>
 
@@ -437,24 +667,64 @@ html
         <span>VORTEX AI ECOSYSTEM © 2025. ALL RIGHTS RESERVED.</span>
       </div>
       <div class="flex items-center gap-6">
-        <a href="/dashboard.html" class="hover:text-brand-600 transition-colors">Client Portal</a>
-        <a href="#" class="hover:text-brand-600 transition-colors">Accounting Disclaimer</a>
-        <a href="#" class="hover:text-brand-600 transition-colors">Privacy Policy</a>
+        <a href="#pricing" class="hover:text-brand-600 transition-colors">
+          <span data-i18n-ms>Pakej Staf</span>
+          <span data-i18n-en>Staffing Packages</span>
+        </a>
+        <a href="#" class="hover:text-brand-600 transition-colors">
+          <span data-i18n-ms>Penafian Perakaunan</span>
+          <span data-i18n-en>Accounting Disclaimer</span>
+        </a>
+        <a href="#" class="hover:text-brand-600 transition-colors">
+          <span data-i18n-ms>Dasar Privasi</span>
+          <span data-i18n-en>Privacy Policy</span>
+        </a>
       </div>
     </div>
   </footer>
 
-  <!-- ================= JAVASCRIPT & UNLOCK INTERACTION ================= -->
+  <!-- ================= JAVASCRIPT & INTERACTIONS ================= -->
   <script>
     lucide.createIcons();
 
-    // Active Checkout Link for Starter
+    // Production Stripe Payment Link for Starter (Active checkout)
     const stripeLinks = {
       'starter': 'https://buy.stripe.com/dRm3cx7R6beqeOy14u1sQ0i'
     };
 
+    let currentLang = 'ms';
+
+    function switchLanguage(lang) {
+      currentLang = lang;
+      const body = document.getElementById('page-body');
+      const btnMs = document.getElementById('btn-lang-ms');
+      const btnEn = document.getElementById('btn-lang-en');
+
+      if (lang === 'en') {
+        body.classList.add('lang-en');
+        document.documentElement.setAttribute('lang', 'en');
+        
+        btnEn.classList.add('bg-white', 'text-brand-600', 'shadow-sm');
+        btnEn.classList.remove('text-slate-500');
+
+        btnMs.classList.remove('bg-white', 'text-brand-600', 'shadow-sm');
+        btnMs.classList.add('text-slate-500');
+      } else {
+        body.classList.remove('lang-en');
+        document.documentElement.setAttribute('lang', 'ms');
+
+        btnMs.classList.add('bg-white', 'text-brand-600', 'shadow-sm');
+        btnMs.classList.remove('text-slate-500');
+
+        btnEn.classList.remove('bg-white', 'text-brand-600', 'shadow-sm');
+        btnEn.classList.add('text-slate-500');
+      }
+      lucide.createIcons();
+    }
+
     function handleHire(tier) {
       if (!stripeLinks[tier]) return;
+
       const button = document.getElementById(`btn-${tier}`);
       const mascot = document.getElementById(`mascot-${tier}`);
       const icon = document.getElementById(`icon-${tier}`);
@@ -469,8 +739,11 @@ html
 
       button.classList.remove('bg-brand-600', 'hover:bg-brand-700');
       button.classList.add('bg-emerald-600', 'text-white', 'shadow-emerald-500/25');
+
       if (text) {
-        text.innerText = 'Membuka Langganan Starter...';
+        text.innerText = currentLang === 'ms' 
+          ? 'Membuka Kunci... Mengalihkan ke Stripe...' 
+          : 'Unlocked! Redirecting to Stripe Checkout...';
       }
 
       mascot.classList.remove('animate-bot-float');
@@ -482,14 +755,20 @@ html
     }
 
     function handleWaitlist(tierName) {
-      alert(`Pakej ${tierName} kini dalam fasa pembangunan dan prapelancaran.\n\nSila langgan Pakej Starter (RM260/bulan) untuk mula mengautomasikan lejar anda hari ini, atau hubungi Virtual CFO kami untuk menyertai senarai menunggu keutamaan!`);
+      if (currentLang === 'ms') {
+        alert(`Pakej ${tierName} kini ditandakan sebagai COMING SOON untuk kohort pelancaran seterusnya.\n\nSila langgan Pakej Starter (RM260/bln) untuk memulakan sekarang, atau hubungi Virtual CFO kami untuk menyertai senarai menunggu berkeutamaan!`);
+      } else {
+        alert(`The ${tierName} tier is currently COMING SOON for our upcoming release cohort.\n\nPlease activate the Starter Plan (RM260/mo) to start immediately, or consult our Virtual CFO to join the priority waitlist!`);
+      }
     }
 
     function openVoiceflowChat() {
       if (window.voiceflow && window.voiceflow.chat) {
         window.voiceflow.chat.open();
       } else {
-        alert("Memulakan Vortex AI Chat... Sila klik butang perbualan di sudut bawah sebelah kanan!");
+        alert(currentLang === 'ms' 
+          ? "Memulakan Vortex AI Core... Sila klik gelembung sembang di sudut kanan bawah!" 
+          : "Initializing Vortex AI Core... Click the blue chat bubble at the bottom right!");
       }
     }
   </script>
