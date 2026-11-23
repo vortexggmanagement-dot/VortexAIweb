@@ -52,19 +52,23 @@ html
       75% { transform: translateY(-16px) scale(0.97, 1.04) rotate(-3deg); }
     }
     .jumping-joy { animation: jumpJoy 0.45s ease-in-out infinite !important; }
-    [data-i18n-en] { display: none; }
-    .lang-en [data-i18n-ms] { display: none !important; }
+
+    /* Default (BM) */
+    [data-i18n-en], [data-i18n-zh] { display: none; }
+
+    /* English */
+    .lang-en [data-i18n-ms], .lang-en [data-i18n-zh] { display: none !important; }
     .lang-en [data-i18n-en] { display: inline !important; }
-    .lang-en blockquote[data-i18n-en], 
-    .lang-en div[data-i18n-en], 
-    .lang-en p[data-i18n-en], 
-    .lang-en h1[data-i18n-en], 
-    .lang-en h2[data-i18n-en], 
-    .lang-en h3[data-i18n-en], 
-    .lang-en h4[data-i18n-en], 
-    .lang-en span.block[data-i18n-en],
-    .lang-en li[data-i18n-en] { display: block !important; }
-    .lang-en flex[data-i18n-en] { display: flex !important; }
+    .lang-en blockquote[data-i18n-en], .lang-en div[data-i18n-en], .lang-en p[data-i18n-en], 
+    .lang-en h1[data-i18n-en], .lang-en h2[data-i18n-en], .lang-en h3[data-i18n-en], 
+    .lang-en h4[data-i18n-en], .lang-en span.block[data-i18n-en], .lang-en li[data-i18n-en] { display: block !important; }
+
+    /* Mandarin Chinese */
+    .lang-zh [data-i18n-ms], .lang-zh [data-i18n-en] { display: none !important; }
+    .lang-zh [data-i18n-zh] { display: inline !important; }
+    .lang-zh blockquote[data-i18n-zh], .lang-zh div[data-i18n-zh], .lang-zh p[data-i18n-zh], 
+    .lang-zh h1[data-i18n-zh], .lang-zh h2[data-i18n-zh], .lang-zh h3[data-i18n-zh], 
+    .lang-zh h4[data-i18n-zh], .lang-zh span.block[data-i18n-zh], .lang-zh li[data-i18n-zh] { display: block !important; }
   </style>
 </head>
 <body id="page-body" class="font-sans antialiased selection:bg-brand-500 selection:text-white">
@@ -80,6 +84,7 @@ html
           <span class="text-xl font-extrabold tracking-tight text-slate-900">VORTEX<span class="text-brand-600">.AI</span></span>
           <span class="text-[10px] font-mono tracking-widest text-slate-500 uppercase -mt-0.5 font-semibold" data-i18n-ms>Perakaunan Digital Autonomi</span>
           <span class="text-[10px] font-mono tracking-widest text-slate-500 uppercase -mt-0.5 font-semibold" data-i18n-en>Autonomous Digital Accounting</span>
+          <span class="text-[10px] font-mono tracking-widest text-slate-500 uppercase -mt-0.5 font-semibold" data-i18n-zh>自主智能数字会计</span>
         </div>
       </div>
 
@@ -88,28 +93,34 @@ html
         <a href="#work-showcase" class="hover:text-brand-600 transition-colors">
           <span data-i18n-ms>Bukti Hasil Kerja</span>
           <span data-i18n-en>Output Showcase</span>
+          <span data-i18n-zh>功能实证</span>
         </a>
         <a href="#pricing" class="hover:text-brand-600 transition-colors">
           <span data-i18n-ms>Pilihan Pakej</span>
           <span data-i18n-en>Hiring Tiers</span>
+          <span data-i18n-zh>价格配套</span>
         </a>
       </nav>
 
-      <!-- Right Actions & Bilingual Switcher -->
+      <!-- Right Actions & Trilingual Switcher -->
       <div class="flex items-center gap-3">
         <!-- Language Switcher Toggle -->
         <div class="flex items-center bg-slate-100 p-1 rounded-lg border border-slate-200">
-          <button id="btn-lang-ms" onclick="switchLanguage('ms')" class="px-2.5 py-1 text-xs font-bold rounded-md bg-white text-brand-600 shadow-sm transition-all flex items-center gap-1">
+          <button id="btn-lang-ms" onclick="switchLanguage('ms')" class="px-2 py-1 text-xs font-bold rounded-md bg-white text-brand-600 shadow-sm transition-all flex items-center gap-1">
             <span>🇲🇾 BM</span>
           </button>
-          <button id="btn-lang-en" onclick="switchLanguage('en')" class="px-2.5 py-1 text-xs font-bold rounded-md text-slate-500 hover:text-slate-800 transition-all flex items-center gap-1">
+          <button id="btn-lang-en" onclick="switchLanguage('en')" class="px-2 py-1 text-xs font-bold rounded-md text-slate-500 hover:text-slate-800 transition-all flex items-center gap-1">
             <span>🇬🇧 EN</span>
+          </button>
+          <button id="btn-lang-zh" onclick="switchLanguage('zh')" class="px-2 py-1 text-xs font-bold rounded-md text-slate-500 hover:text-slate-800 transition-all flex items-center gap-1">
+            <span>🇨🇳 中文</span>
           </button>
         </div>
 
         <a href="#pricing" class="hidden sm:inline-flex items-center gap-2 px-4 py-2.5 text-xs font-bold uppercase tracking-wider text-white bg-brand-600 hover:bg-brand-700 rounded-lg shadow-sm hover:shadow-md transition-all">
-          <span data-i18n-ms>Daftar Starter (RM260)</span>
-          <span data-i18n-en>Deploy Starter (RM260)</span>
+          <span data-i18n-ms>Pilih Pakej (RM39)</span>
+          <span data-i18n-en>Deploy Starter (RM39)</span>
+          <span data-i18n-zh>立即启用 (RM39)</span>
         </a>
       </div>
     </div>
@@ -124,16 +135,19 @@ html
         <span class="w-2 h-2 rounded-full bg-brand-500 animate-pulse"></span>
         <span data-i18n-ms>Vortex AI Core v3.0 • Staf Perakaunan Digital Autonomi</span>
         <span data-i18n-en>Vortex AI Core v3.0 • Autonomous Accounting Employee</span>
+        <span data-i18n-zh>Vortex AI Core v3.0 • 24小时全自动数字会计员工</span>
       </div>
 
       <!-- Main Headline -->
       <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-slate-900 leading-[1.15] mb-6">
         <span data-i18n-ms>Gajikan Jurukira AI Pintar Anda.</span>
         <span data-i18n-en>Hire an Autonomous AI Accountant.</span>
+        <span data-i18n-zh>聘请您的全自动 AI 数字会计员工。</span>
         <br/>
         <span class="bg-clip-text text-transparent bg-gradient-to-r from-brand-600 via-indigo-600 to-slate-800">
           <span data-i18n-ms>Sifar Data Manual. 100% Lejar Berimbang.</span>
           <span data-i18n-en>Zero Manual Entry. 100% Balanced Books.</span>
+          <span data-i18n-zh>零手动录入。100% 账目实时平衡。</span>
         </span>
       </h1>
 
@@ -144,18 +158,23 @@ html
       <p class="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed mb-10" data-i18n-en>
         Stop logging receipts manually or guessing profit margins. Simply snap and send bills via Telegram—Vortex AI balances your double-entry ledger and syncs live to Google Sheets around the clock.
       </p>
+      <p class="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed mb-10" data-i18n-zh>
+        告别手动输入收据和盲猜盈亏。只需通过 Telegram 拍照发送账单与收据，Vortex AI 即刻在数秒内自动提取数据、平衡借贷账目，并无缝同步至专属 Google 表格。
+      </p>
 
       <!-- CTA Buttons -->
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
         <a href="#pricing" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-sm shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2">
-          <span data-i18n-ms>Gajikan Staf Digital (RM260/bln)</span>
-          <span data-i18n-en>Deploy Autonomous Staff (RM260/mo)</span>
+          <span data-i18n-ms>Gajikan Staf Digital (Mulai RM39/bln)</span>
+          <span data-i18n-en>Deploy Autonomous Staff (From RM39/mo)</span>
+          <span data-i18n-zh>聘请 AI 员工（每月仅 RM39 起）</span>
           <i data-lucide="arrow-down" class="w-4 h-4"></i>
         </a>
         <button onclick="openVoiceflowChat()" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-white border border-slate-300 text-slate-700 font-semibold text-sm hover:bg-slate-50 transition-all flex items-center justify-center gap-2">
           <i data-lucide="message-square" class="w-4 h-4 text-brand-600"></i>
           <span data-i18n-ms>Tanya Virtual CFO Secara Langsung</span>
           <span data-i18n-en>Ask Live Virtual CFO</span>
+          <span data-i18n-zh>咨询在线虚拟 CFO</span>
         </button>
       </div>
 
@@ -165,16 +184,19 @@ html
           <i data-lucide="check-check" class="w-4 h-4 text-emerald-600"></i>
           <span data-i18n-ms>Piawaian Double-Entry Seimbang</span>
           <span data-i18n-en>Double-Entry Balanced Standard</span>
+          <span data-i18n-zh>复式记账平衡标准</span>
         </div>
         <div class="flex items-center gap-2">
           <i data-lucide="table" class="w-4 h-4 text-brand-600"></i>
           <span data-i18n-ms>Penyegerakan Google Sheets Pantas</span>
           <span data-i18n-en>Live Google Sheets Sync</span>
+          <span data-i18n-zh>实时同步 Google 表格</span>
         </div>
         <div class="flex items-center gap-2">
           <i data-lucide="shield-check" class="w-4 h-4 text-indigo-600"></i>
           <span data-i18n-ms>Penyulitan Selamat Stripe 256-bit</span>
           <span data-i18n-en>Stripe 256-bit Secure Encryption</span>
+          <span data-i18n-zh>Stripe 256位高规格加密支付</span>
         </div>
       </div>
     </div>
@@ -185,12 +207,15 @@ html
     <div class="text-center max-w-3xl mx-auto mb-16">
       <span class="text-xs font-mono tracking-widest text-brand-600 uppercase font-bold" data-i18n-ms>Bukti Hasil Pengeluaran Sebenar</span>
       <span class="text-xs font-mono tracking-widest text-brand-600 uppercase font-bold" data-i18n-en>Verifiable Production Output</span>
+      <span class="text-xs font-mono tracking-widest text-brand-600 uppercase font-bold" data-i18n-zh>实际运行产出实证</span>
       <h2 class="text-3xl font-extrabold text-slate-900 mt-2">
         <span data-i18n-ms>Lihat Hasil Kerja Automatik Staf AI Anda</span>
         <span data-i18n-en>See Exactly What Your AI Employee Delivers</span>
+        <span data-i18n-zh>见证您的 AI 会计员工所交付的实际成果</span>
       </h2>
       <p class="text-slate-600 text-sm mt-3" data-i18n-ms>Daripada gambar kamera telefon pintar kepada lejar berimbang, rekod Google Sheets dan analisis kewangan terperinci.</p>
       <p class="text-slate-600 text-sm mt-3" data-i18n-en>From raw smartphone receipt snapshots to balanced debits, credits, Google Sheets sync, and executive insights.</p>
+      <p class="text-slate-600 text-sm mt-3" data-i18n-zh>从手机随手拍摄的模糊单据，瞬间转换为借贷平衡报表、Google 表格实时记录与财务洞察。</p>
     </div>
 
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -201,10 +226,13 @@ html
           <div class="w-10 h-10 rounded-xl bg-brand-50 flex items-center justify-center text-brand-600 mb-4 font-bold"><i data-lucide="camera" class="w-5 h-5"></i></div>
           <span class="text-xs font-mono uppercase text-slate-400 font-bold" data-i18n-ms>Langkah 01: Ekstraksi Data</span>
           <span class="text-xs font-mono uppercase text-slate-400 font-bold" data-i18n-en>Step 01: Ingestion</span>
+          <span class="text-xs font-mono uppercase text-slate-400 font-bold" data-i18n-zh>步骤 01：数据识别与提取</span>
           <h3 class="text-lg font-bold text-slate-900 mt-1" data-i18n-ms>OCR Kamera Resit Telegram</h3>
           <h3 class="text-lg font-bold text-slate-900 mt-1" data-i18n-en>Mobile Camera OCR Parser</h3>
+          <h3 class="text-lg font-bold text-slate-900 mt-1" data-i18n-zh>Telegram 相机 OCR 自动识别</h3>
           <p class="text-xs text-slate-500 mt-2 mb-4" data-i18n-ms>Rakam foto resit belian fizikal dan terus hantar ke bot Telegram tanpa perlu login portal.</p>
           <p class="text-xs text-slate-500 mt-2 mb-4" data-i18n-en>Snap crumpled paper receipts and forward straight to Telegram with zero login friction.</p>
+          <p class="text-xs text-slate-500 mt-2 mb-4" data-i18n-zh>随手拍下纸质收据直接发送给 Telegram 机器人，无需繁琐登入任何复杂后台。</p>
 
           <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 font-mono text-xs text-slate-700 space-y-2">
             <div class="text-[10px] text-slate-400 border-b border-slate-200 pb-1.5 flex justify-between">
@@ -215,8 +243,9 @@ html
             <div class="flex justify-between text-slate-600"><span>Cheezy Wedges (2x):</span><span>RM 11.00</span></div>
             <div class="flex justify-between text-slate-600"><span>15PC Chicken Combo:</span><span>RM 62.70</span></div>
             <div class="border-t border-slate-200 pt-1 flex justify-between font-bold text-slate-900">
-              <span data-i18n-ms>Jumlah Bayaran (Tunai):</span>
-              <span data-i18n-en>Total Paid (Cash):</span>
+              <span data-i18n-ms>Jumlah Bayaran:</span>
+              <span data-i18n-en>Total Paid:</span>
+              <span data-i18n-zh>实付金额：</span>
               <span class="text-brand-600">RM 73.70</span>
             </div>
           </div>
@@ -225,6 +254,7 @@ html
           <i data-lucide="check" class="w-4 h-4"></i>
           <span data-i18n-ms>Diekstrak dalam 1.2 saat</span>
           <span data-i18n-en>Parsed in 1.2 seconds</span>
+          <span data-i18n-zh>1.2 秒内自动精准提取</span>
         </div>
       </div>
 
@@ -234,10 +264,13 @@ html
           <div class="w-10 h-10 rounded-xl bg-indigo-50 flex items-center justify-center text-indigo-600 mb-4 font-bold"><i data-lucide="book-open" class="w-5 h-5"></i></div>
           <span class="text-xs font-mono uppercase text-slate-400 font-bold" data-i18n-ms>Langkah 02: Catatan Lejar</span>
           <span class="text-xs font-mono uppercase text-slate-400 font-bold" data-i18n-en>Step 02: Ledger Posting</span>
+          <span class="text-xs font-mono uppercase text-slate-400 font-bold" data-i18n-zh>步骤 02：复式总账录入</span>
           <h3 class="text-lg font-bold text-slate-900 mt-1" data-i18n-ms>Jurnal & Lejar Double-Entry</h3>
           <h3 class="text-lg font-bold text-slate-900 mt-1" data-i18n-en>Double-Entry Journal & Ledger</h3>
+          <h3 class="text-lg font-bold text-slate-900 mt-1" data-i18n-zh>复式记账借贷自动配平</h3>
           <p class="text-xs text-slate-500 mt-2 mb-4" data-i18n-ms>Transaksi dimasukkan secara automatik ke akaun perbelanjaan dan tunai secara berimbang.</p>
           <p class="text-xs text-slate-500 mt-2 mb-4" data-i18n-en>Transactions automatically posted into balanced debit and credit expense accounts without error.</p>
+          <p class="text-xs text-slate-500 mt-2 mb-4" data-i18n-zh>每笔支出自动分类至准确会计科目，确保借方与贷方分录绝无误差。</p>
 
           <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 font-mono text-xs text-slate-700 space-y-2">
             <div class="text-[10px] text-slate-400 border-b border-slate-200 pb-1.5 flex justify-between">
@@ -249,6 +282,7 @@ html
             <div class="border-t border-slate-200 pt-1 flex justify-between text-[11px] text-slate-500">
               <span data-i18n-ms>Persamaan Lejar:</span>
               <span data-i18n-en>Equation Check:</span>
+              <span data-i18n-zh>总账平衡核验：</span>
               <span class="text-emerald-600 font-bold">Debit = Credit (RM 73.70)</span>
             </div>
           </div>
@@ -257,6 +291,7 @@ html
           <i data-lucide="check" class="w-4 h-4"></i>
           <span data-i18n-ms>100% Lejar Berimbang Serta-merta</span>
           <span data-i18n-en>100% Balanced Ledger Equation</span>
+          <span data-i18n-zh>100% 自动配平借贷平衡</span>
         </div>
       </div>
 
@@ -266,10 +301,13 @@ html
           <div class="w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center text-emerald-600 mb-4 font-bold"><i data-lucide="trending-up" class="w-5 h-5"></i></div>
           <span class="text-xs font-mono uppercase text-slate-400 font-bold" data-i18n-ms>Langkah 03: Pandangan Eksekutif</span>
           <span class="text-xs font-mono uppercase text-slate-400 font-bold" data-i18n-en>Step 03: Executive Advice</span>
+          <span class="text-xs font-mono uppercase text-slate-400 font-bold" data-i18n-zh>步骤 03：经营洞察与分析</span>
           <h3 class="text-lg font-bold text-slate-900 mt-1" data-i18n-ms>Analisis Margin & Titik Pulang Modal</h3>
           <h3 class="text-lg font-bold text-slate-900 mt-1" data-i18n-en>C-Suite Margin & BEP Briefing</h3>
+          <h3 class="text-lg font-bold text-slate-900 mt-1" data-i18n-zh>利润率分析与保本点测算</h3>
           <p class="text-xs text-slate-500 mt-2 mb-4" data-i18n-ms>Virtual CFO mengira ekonomi unit dan mengesyorkan langkah penjimatan kos operasi.</p>
           <p class="text-xs text-slate-500 mt-2 mb-4" data-i18n-en>Vortex Virtual CFO computes your unit economics and suggests immediate cost-reduction levers.</p>
+          <p class="text-xs text-slate-500 mt-2 mb-4" data-i18n-zh>虚拟 CFO 实时演算单店与单品经济效益，为您提供切实可行的降本增效建议。</p>
 
           <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 font-mono text-xs text-slate-700 space-y-2">
             <div class="text-[10px] text-slate-400 border-b border-slate-200 pb-1.5 flex justify-between">
@@ -279,26 +317,25 @@ html
             <div class="flex justify-between text-slate-800">
               <span data-i18n-ms>Margin Kasar:</span>
               <span data-i18n-en>Gross Margin:</span>
+              <span data-i18n-zh>毛利率：</span>
               <span class="font-bold text-emerald-600">60.0%</span>
             </div>
             <div class="flex justify-between text-slate-800">
               <span data-i18n-ms>Pulang Modal Bulanan:</span>
               <span data-i18n-en>Monthly Break-Even:</span>
+              <span data-i18n-zh>月度保本销售：</span>
               <span class="font-bold text-slate-900">200 Units</span>
-            </div>
-            <div class="flex justify-between text-slate-800">
-              <span data-i18n-ms>Penandaan Bahan Mentah:</span>
-              <span data-i18n-en>Markup Percentage:</span>
-              <span class="font-bold text-brand-600">150.0%</span>
             </div>
             <div class="border-t border-slate-200 pt-1 text-[11px] text-slate-500" data-i18n-ms>Tindakan: Margin caruman stabil di semua cawangan.</div>
             <div class="border-t border-slate-200 pt-1 text-[11px] text-slate-500" data-i18n-en>Action: Contribution margin healthy across operations.</div>
+            <div class="border-t border-slate-200 pt-1 text-[11px] text-slate-500" data-i18n-zh>建议：边际收益保持健康稳健。</div>
           </div>
         </div>
         <div class="mt-6 flex items-center gap-2 text-xs font-medium text-emerald-600">
           <i data-lucide="check" class="w-4 h-4"></i>
           <span data-i18n-ms>Dihantar terus ke Telegram / Sheets</span>
           <span data-i18n-en>Delivered directly to Telegram / Sheets</span>
+          <span data-i18n-zh>直接推送到 Telegram 与表格</span>
         </div>
       </div>
 
@@ -308,32 +345,36 @@ html
   <!-- ================= PRICING / HIRING SECTION ================= -->
   <section id="pricing" class="py-24 px-6 max-w-7xl mx-auto bg-white border-y border-slate-200">
     <div class="text-center max-w-3xl mx-auto mb-16">
-      <span class="text-xs font-mono tracking-widest text-brand-600 uppercase font-bold" data-i18n-ms>Matriks Penggajian Autonomi</span>
+      <span class="text-xs font-mono tracking-widest text-brand-600 uppercase font-bold" data-i18n-ms>Pakej Langganan Autonomi</span>
       <span class="text-xs font-mono tracking-widest text-brand-600 uppercase font-bold" data-i18n-en>Autonomous Staffing Matrix</span>
+      <span class="text-xs font-mono tracking-widest text-brand-600 uppercase font-bold" data-i18n-zh>智能财务配套选择</span>
       <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">
         <span data-i18n-ms>Pilih Pakej Jabatan Akaun Digital Anda</span>
         <span data-i18n-en>Hire Your Digital Accounting Department</span>
+        <span data-i18n-zh>定制您的数字化财务部门配套</span>
       </h2>
       <p class="text-slate-600 text-sm mt-3" data-i18n-ms>Jimatkan ribuan ringgit kos gaji kerani biasa. Gajikan pembantu akaun digital dengan lejar masa nyata dan sifar kelewatan.</p>
       <p class="text-slate-600 text-sm mt-3" data-i18n-en>Why pay thousands for a manual clerk? Deploy autonomous digital staff with verified scopes, real-time ledgers, and zero payroll friction.</p>
+      <p class="text-slate-600 text-sm mt-3" data-i18n-zh>无需背负数千令吉的人工全职薪水，即可拥有一位全天候无休、秒级录单的 AI 数字会计专家。</p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
       
-      <!-- ================= PACKAGE 1: STARTER (RM260) - PALING POPULAR ================= -->
+      <!-- ================= PACKAGE 1: STARTER (RM39) - TRIAL 3 HARI ================= -->
       <div class="hero-card rounded-2xl p-8 flex flex-col justify-between relative" id="card-starter">
         
-        <!-- Paling Popular Badge -->
-        <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-amber-500 via-orange-500 to-amber-600 text-white text-[11px] font-black tracking-wider uppercase px-4 py-1 rounded-full shadow-lg flex items-center gap-1.5 border border-amber-200/40">
+        <!-- Trial Badge -->
+        <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700 text-white text-[11px] font-black tracking-wider uppercase px-4 py-1 rounded-full shadow-lg flex items-center gap-1.5 border border-emerald-200/40">
           <i data-lucide="sparkles" class="w-3.5 h-3.5 text-yellow-200 fill-yellow-200"></i>
-          <span data-i18n-ms>Paling Popular</span>
-          <span data-i18n-en>Most Popular</span>
+          <span data-i18n-ms>Percubaan Percuma 3 Hari</span>
+          <span data-i18n-en>3-Day Free Trial</span>
+          <span data-i18n-zh>3天免费试用体验</span>
         </div>
 
         <div>
           <!-- Mascot: Solo Junior Bot -->
           <div class="flex flex-col items-center justify-center py-2 mb-4 relative" id="mascot-wrapper-starter">
-            <div id="mascot-starter" class="relative w-28 h-28 flex items-center justify-center animate-bot-float">
+            <div id="mascot-starter" class="relative w-24 h-24 flex items-center justify-center animate-bot-float">
               <svg viewBox="0 0 120 120" class="w-full h-full drop-shadow-md" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <line x1="60" y1="20" x2="60" y2="30" stroke="#0EA5E9" stroke-width="3" stroke-linecap="round"/>
                 <circle cx="60" cy="18" r="4" fill="#0EA5E9" class="animate-pulse"/>
@@ -349,16 +390,10 @@ html
                 <g class="animate-bot-wave">
                   <rect x="86" y="75" width="8" height="18" rx="4" fill="#0369A1"/>
                   <rect x="84" y="88" width="20" height="15" rx="3" fill="#D97706"/>
-                  <rect x="90" y="85" width="8" height="4" rx="1.5" stroke="#92400E" stroke-width="1.5" fill="none"/>
-                  <line x1="84" y1="95" x2="104" y2="95" stroke="#B45309" stroke-width="1.5"/>
                 </g>
               </svg>
             </div>
             <div class="w-16 h-2 bg-slate-300 rounded-full animate-shadow-pulse -mt-1 blur-[1px]"></div>
-            <span class="text-[11px] font-mono font-bold tracking-wider text-cyan-800 bg-cyan-50 px-3 py-0.5 rounded-full mt-2 border border-cyan-200">
-              <span data-i18n-ms>1 BOT JURUKIRA JUNIOR</span>
-              <span data-i18n-en>1 JUNIOR BOOKKEEPER BOT</span>
-            </span>
           </div>
 
           <div class="flex justify-between items-start mb-2">
@@ -366,100 +401,109 @@ html
               <span class="text-xs font-mono uppercase text-brand-600 font-extrabold tracking-wider">
                 <span data-i18n-ms>Pakej 1</span>
                 <span data-i18n-en>Package 1</span>
+                <span data-i18n-zh>配套 1</span>
               </span>
               <h3 class="text-2xl font-extrabold text-slate-900 mt-0.5">Starter</h3>
             </div>
             <span class="px-2.5 py-1 rounded-full bg-brand-50 text-[11px] font-bold text-brand-700 border border-brand-200">
-              <span data-i18n-ms>1 Seat (Pemilik sahaja)</span>
-              <span data-i18n-en>1 Seat (Owner only)</span>
+              <span data-i18n-ms>1 Pengguna</span>
+              <span data-i18n-en>1 User Seat</span>
+              <span data-i18n-zh>1 位独立用户</span>
             </span>
           </div>
 
-          <div class="my-6 pb-6 border-b border-slate-100">
-            <span class="text-5xl font-black text-slate-900">RM260</span>
-            <span class="text-slate-500 text-sm font-medium">
-              <span data-i18n-ms>/ bulan</span>
-              <span data-i18n-en>/ month</span>
+          <!-- Description & Target Audience -->
+          <div class="bg-brand-50/70 border border-brand-100 rounded-xl p-3 my-3">
+            <span class="text-[11px] font-mono font-bold uppercase tracking-wider text-brand-800 block mb-1">
+              <span data-i18n-ms>🎯 Sesuai Untuk Siapa:</span>
+              <span data-i18n-en>🎯 Best Suited For:</span>
+              <span data-i18n-zh>🎯 最适合对象：</span>
             </span>
-            <div class="text-xs text-brand-600 font-semibold mt-1">
-              <span data-i18n-ms>Akses Penuh Serta-merta</span>
-              <span data-i18n-en>Instant Full Access</span>
+            <p class="text-xs text-slate-700 leading-snug" data-i18n-ms>
+              Peniaga solo, dropship, home-bakers, gerai makan, freelancer, dan ejen jualan yang mahu rekod belanja secara santai & pantas.
+            </p>
+            <p class="text-xs text-slate-700 leading-snug" data-i18n-en>
+              Solo founders, home bakers, dropshippers, food stall owners, freelancers, and small merchants needing automated expense logs.
+            </p>
+            <p class="text-xs text-slate-700 leading-snug" data-i18n-zh>
+              一人创业者、微商、居家烘焙、自由职业者、档口老板，省去复杂软件，随手记账。
+            </p>
+          </div>
+
+          <div class="my-5 pb-5 border-b border-slate-100">
+            <div class="flex items-baseline gap-1">
+              <span class="text-4xl font-black text-slate-900">RM39</span>
+              <span class="text-slate-500 text-xs font-medium">
+                <span data-i18n-ms>/ bulan</span>
+                <span data-i18n-en>/ month</span>
+                <span data-i18n-zh>/ 每月</span>
+              </span>
+            </div>
+            <div class="text-xs text-emerald-600 font-semibold mt-1">
+              <span data-i18n-ms>Percuma 3 Hari • Caj Hari Ke-4</span>
+              <span data-i18n-en>3-Day Trial • Charges on Day 4</span>
+              <span data-i18n-zh>首3天免扣款 • 第4天自动续费</span>
             </div>
           </div>
 
           <!-- Feature Breakdown -->
-          <div class="space-y-4 mb-6">
-            <div>
-              <h4 class="text-xs font-mono uppercase text-slate-400 font-bold mb-2">
-                <span data-i18n-ms>Had Kuota Bulanan:</span>
-                <span data-i18n-en>Monthly Quota Limit:</span>
-              </h4>
-              <div class="flex items-center gap-2 text-xs font-semibold text-slate-800 bg-slate-50 p-2.5 rounded-lg border border-slate-200">
-                <i data-lucide="receipt" class="w-4 h-4 text-brand-600"></i>
-                <span data-i18n-ms>100 resit / bulan</span>
-                <span data-i18n-en>100 receipts / month</span>
-              </div>
+          <div class="space-y-3 mb-6">
+            <div class="flex items-center gap-2 text-xs font-semibold text-slate-800 bg-slate-50 p-2.5 rounded-lg border border-slate-200">
+              <i data-lucide="receipt" class="w-4 h-4 text-brand-600"></i>
+              <span data-i18n-ms>100 resit / bulan</span>
+              <span data-i18n-en>100 receipts / month</span>
+              <span data-i18n-zh>每月额度：100 张收据</span>
             </div>
 
-            <div>
-              <h4 class="text-xs font-mono uppercase text-slate-400 font-bold mb-2">
-                <span data-i18n-ms>Tab Google Sheets Aktif:</span>
-                <span data-i18n-en>Active Google Sheets Tabs:</span>
-              </h4>
-              <ul class="text-xs text-slate-700 space-y-1.5 font-mono">
-                <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0"></i><span><strong>Dashboard Ringkasan</strong></span></li>
-                <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0"></i><span><strong>Receipt_Log</strong></span></li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 class="text-xs font-mono uppercase text-slate-400 font-bold mb-2">
-                <span data-i18n-ms>Skop Operasi:</span>
-                <span data-i18n-en>Operational Scope:</span>
-              </h4>
-              <ul class="text-xs text-slate-600 space-y-1.5">
-                <li class="flex items-start gap-2">
-                  <i data-lucide="check" class="w-3.5 h-3.5 text-brand-600 shrink-0 mt-0.5"></i>
-                  <span data-i18n-ms>Integrasi Telegram OCR Segera</span>
-                  <span data-i18n-en>Instant Telegram OCR Integration</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <i data-lucide="check" class="w-3.5 h-3.5 text-brand-600 shrink-0 mt-0.5"></i>
-                  <span data-i18n-ms>Lejar Double-Entry & Baki Masa Nyata</span>
-                  <span data-i18n-en>Double-Entry Ledger & Real-Time Balance</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <i data-lucide="check" class="w-3.5 h-3.5 text-brand-600 shrink-0 mt-0.5"></i>
-                  <span data-i18n-ms>Google Drive Receipt Auto-Vault</span>
-                  <span data-i18n-en>Google Drive Receipt Auto-Vault</span>
-                </li>
-              </ul>
-            </div>
+            <ul class="text-xs text-slate-600 space-y-2">
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-brand-600 shrink-0 mt-0.5"></i>
+                <span data-i18n-ms>1 Akaun Telegram Pemilik</span>
+                <span data-i18n-en>1 Connected Telegram Account</span>
+                <span data-i18n-zh>支持 1 个 Telegram 账号绑定</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-brand-600 shrink-0 mt-0.5"></i>
+                <span data-i18n-ms>1 Google Sheets (Template Bersih & Ringkas)</span>
+                <span data-i18n-en>1 Clean Google Sheet (Single Log View)</span>
+                <span data-i18n-zh>独享 1 个整洁的 Google 实时账目表</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-brand-600 shrink-0 mt-0.5"></i>
+                <span data-i18n-ms>AI Auto-Extract (Tarikh, Kedai, Amaun, Kategori)</span>
+                <span data-i18n-en>AI Auto-Extract (Date, Vendor, Amount, Category)</span>
+                <span data-i18n-zh>AI 提取：日期、商家名、金额、支出类型</span>
+              </li>
+            </ul>
           </div>
         </div>
 
         <button id="btn-starter" onclick="handleHire('starter')" class="w-full py-4 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-extrabold text-xs uppercase tracking-wider shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2">
-          <i id="icon-starter" data-lucide="lock" class="w-4 h-4 transition-transform lock-icon"></i>
+          <i id="icon-starter" data-lucide="sparkles" class="w-4 h-4"></i>
           <span id="text-starter" class="btn-text">
-            <span data-i18n-ms>Langgan Starter (RM260/bln)</span>
-            <span data-i18n-en>Deploy Starter (RM260/mo)</span>
+            <span data-i18n-ms>Mulakan Trial 3 Hari</span>
+            <span data-i18n-en>Start 3-Day Free Trial</span>
+            <span data-i18n-zh>免费体验 3 天</span>
           </span>
         </button>
       </div>
 
-      <!-- ================= PACKAGE 2: PRO GROWTH (RM500) - COMING SOON ================= -->
-      <div class="surface-card rounded-2xl p-8 flex flex-col justify-between border-slate-300 bg-slate-50/70 relative overflow-hidden" id="card-pro">
+      <!-- ================= PACKAGE 2: PRO (RM79) - PALING POPULAR ================= -->
+      <div class="surface-card rounded-2xl p-8 flex flex-col justify-between border-indigo-200 relative shadow-md" id="card-pro">
         
-        <!-- Coming Soon Badge -->
-        <div class="absolute -top-3.5 right-6 bg-slate-800 text-amber-300 text-[10px] font-extrabold tracking-widest uppercase px-3 py-1 rounded-full shadow-sm border border-slate-700">
-          Coming Soon
+        <!-- Popular Badge -->
+        <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-indigo-600 to-brand-600 text-white text-[11px] font-black tracking-wider uppercase px-4 py-1 rounded-full shadow-md flex items-center gap-1.5">
+          <i data-lucide="flame" class="w-3.5 h-3.5 text-amber-200 fill-amber-200"></i>
+          <span data-i18n-ms>Paling Sesuai SME</span>
+          <span data-i18n-en>Most Popular for SMEs</span>
+          <span data-i18n-zh>中小商户最佳首选</span>
         </div>
 
         <div>
-          <!-- Mascot: Duo Senior Squad (Muted) -->
-          <div class="flex flex-col items-center justify-center py-2 mb-4 relative opacity-75" id="mascot-wrapper-pro">
+          <!-- Mascot: Senior Team -->
+          <div class="flex flex-col items-center justify-center py-2 mb-4 relative" id="mascot-wrapper-pro">
             <div id="mascot-pro" class="flex items-center justify-center gap-2">
-              <div class="relative w-16 h-20 animate-bot-float">
+              <div class="relative w-14 h-16 animate-bot-float">
                 <svg viewBox="0 0 120 120" class="w-full h-full drop-shadow-sm" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <line x1="60" y1="20" x2="60" y2="30" stroke="#6366F1" stroke-width="3" stroke-linecap="round"/>
                   <circle cx="60" cy="18" r="4" fill="#6366F1"/>
@@ -470,7 +514,7 @@ html
                   <rect x="38" y="72" width="44" height="34" rx="10" fill="#4F46E5"/>
                 </svg>
               </div>
-              <div class="relative w-16 h-20 animate-bot-float-delayed">
+              <div class="relative w-14 h-16 animate-bot-float-delayed">
                 <svg viewBox="0 0 120 120" class="w-full h-full drop-shadow-sm" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <line x1="60" y1="22" x2="60" y2="32" stroke="#10B981" stroke-width="3" stroke-linecap="round"/>
                   <circle cx="60" cy="20" r="4" fill="#10B981"/>
@@ -482,177 +526,212 @@ html
                 </svg>
               </div>
             </div>
-            <span class="text-[11px] font-mono font-bold tracking-wider text-slate-500 bg-slate-200 px-3 py-0.5 rounded-full mt-2">
-              <span data-i18n-ms>SENIOR ACCOUNTANT + CFO BOT</span>
-              <span data-i18n-en>SENIOR ACCOUNTANT + CFO BOT</span>
-            </span>
+            <div class="w-20 h-2 bg-slate-300 rounded-full animate-shadow-pulse -mt-1 blur-[1px]"></div>
           </div>
 
           <div class="flex justify-between items-start mb-2">
             <div>
-              <span class="text-xs font-mono uppercase text-slate-400 font-extrabold tracking-wider">
+              <span class="text-xs font-mono uppercase text-indigo-600 font-extrabold tracking-wider">
                 <span data-i18n-ms>Pakej 2</span>
                 <span data-i18n-en>Package 2</span>
+                <span data-i18n-zh>配套 2</span>
               </span>
-              <h3 class="text-2xl font-extrabold text-slate-800 mt-0.5">Pro Growth</h3>
+              <h3 class="text-2xl font-extrabold text-slate-900 mt-0.5">Pro Growth</h3>
             </div>
-            <span class="px-2.5 py-1 rounded-full bg-slate-200 text-[11px] font-semibold text-slate-600">
-              <span data-i18n-ms>1 Seat (Pemilik / Akauntan)</span>
-              <span data-i18n-en>1 Seat (Owner / Accountant)</span>
+            <span class="px-2.5 py-1 rounded-full bg-indigo-50 text-[11px] font-bold text-indigo-700 border border-indigo-200">
+              <span data-i18n-ms>Sehingga 3 Pekerja</span>
+              <span data-i18n-en>Up to 3 Staff</span>
+              <span data-i18n-zh>支持最多 3 名员工</span>
             </span>
           </div>
 
-          <div class="my-6 pb-6 border-b border-slate-200">
-            <span class="text-5xl font-black text-slate-400">RM500</span>
-            <span class="text-slate-400 text-sm font-medium">
-              <span data-i18n-ms>/ bulan</span>
-              <span data-i18n-en>/ month</span>
+          <!-- Description & Target Audience -->
+          <div class="bg-indigo-50/70 border border-indigo-100 rounded-xl p-3 my-3">
+            <span class="text-[11px] font-mono font-bold uppercase tracking-wider text-indigo-800 block mb-1">
+              <span data-i18n-ms>🎯 Sesuai Untuk Siapa:</span>
+              <span data-i18n-en>🎯 Best Suited For:</span>
+              <span data-i18n-zh>🎯 最适合对象：</span>
             </span>
-            <div class="text-xs text-amber-700 font-semibold mt-1">
-              <span data-i18n-ms>Coming Soon • Senarai Menunggu Dibuka</span>
-              <span data-i18n-en>Coming Soon • Priority Waitlist Open</span>
+            <p class="text-xs text-slate-700 leading-snug" data-i18n-ms>
+              Butik fesyen, kafe, restoran, bengkel, klinik, dan agensi servis yang mempunyai staf untuk buat belian harian.
+            </p>
+            <p class="text-xs text-slate-700 leading-snug" data-i18n-en>
+              Boutiques, cafes, restaurants, auto workshops, and service agencies with staff making regular purchases.
+            </p>
+            <p class="text-xs text-slate-700 leading-snug" data-i18n-zh>
+              精品店、餐饮咖啡厅、维修工坊、诊所、需要店员协助报销录单的中小型团队。
+            </p>
+          </div>
+
+          <div class="my-5 pb-5 border-b border-slate-100">
+            <div class="flex items-baseline gap-1">
+              <span class="text-4xl font-black text-slate-900">RM79</span>
+              <span class="text-slate-500 text-xs font-medium">
+                <span data-i18n-ms>/ bulan</span>
+                <span data-i18n-en>/ month</span>
+                <span data-i18n-zh>/ 每月</span>
+              </span>
+            </div>
+            <div class="text-xs text-indigo-600 font-semibold mt-1">
+              <span data-i18n-ms>Multi-User • Auto Folder Google Drive</span>
+              <span data-i18n-en>Multi-User • Auto Google Drive Vault</span>
+              <span data-i18n-zh>多人协作 • 自动收据云端按月归档</span>
             </div>
           </div>
 
           <!-- Feature Breakdown -->
-          <div class="space-y-4 mb-6">
-            <div>
-              <h4 class="text-xs font-mono uppercase text-slate-400 font-bold mb-2">
-                <span data-i18n-ms>Had Kuota Bulanan:</span>
-                <span data-i18n-en>Monthly Quota Limit:</span>
-              </h4>
-              <div class="flex items-center gap-2 text-xs font-semibold text-slate-700 bg-slate-100 p-2.5 rounded-lg border border-slate-200">
-                <i data-lucide="receipt" class="w-4 h-4 text-slate-500"></i>
-                <span data-i18n-ms>200 resit / bulan</span>
-                <span data-i18n-en>200 receipts / month</span>
-              </div>
+          <div class="space-y-3 mb-6">
+            <div class="flex items-center gap-2 text-xs font-semibold text-slate-800 bg-slate-50 p-2.5 rounded-lg border border-slate-200">
+              <i data-lucide="receipt" class="w-4 h-4 text-indigo-600"></i>
+              <span data-i18n-ms>300 resit / bulan</span>
+              <span data-i18n-en>300 receipts / month</span>
+              <span data-i18n-zh>每月额度：300 张收据</span>
             </div>
 
-            <div>
-              <h4 class="text-xs font-mono uppercase text-slate-400 font-bold mb-2">
-                <span data-i18n-ms>Tab Google Sheets Aktif:</span>
-                <span data-i18n-en>Active Google Sheets Tabs:</span>
-              </h4>
-              <ul class="text-xs text-slate-600 space-y-1.5 font-mono">
-                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-indigo-500 shrink-0"></i>
-                  <span data-i18n-ms>Semua tab Pakej 1 (Dashboard + Log)</span>
-                  <span data-i18n-en>All Package 1 tabs (Dashboard + Log)</span>
-                </li>
-                <li class="flex items-center gap-2"><i data-lucide="plus" class="w-4 h-4 text-brand-600 shrink-0"></i><span><strong>Profit_And_Loss</strong></span></li>
-                <li class="flex items-center gap-2"><i data-lucide="plus" class="w-4 h-4 text-brand-600 shrink-0"></i><span><strong>Trial_Balance</strong></span></li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 class="text-xs font-mono uppercase text-slate-400 font-bold mb-2">
-                <span data-i18n-ms>Ciri Tambahan:</span>
-                <span data-i18n-en>Advanced Capabilities:</span>
-              </h4>
-              <p class="text-xs text-slate-500" data-i18n-ms>Diagnostik Margin & Break-Even Point (BEP) oleh Virtual CFO automatik secara berkala.</p>
-              <p class="text-xs text-slate-500" data-i18n-en>Virtual CFO Margin & Break-Even Point (BEP) contribution diagnostics.</p>
-            </div>
+            <ul class="text-xs text-slate-600 space-y-2">
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-indigo-600 shrink-0 mt-0.5"></i>
+                <span data-i18n-ms>Sambung sehingga 3 akaun Telegram staf</span>
+                <span data-i18n-en>Link up to 3 staff Telegram accounts</span>
+                <span data-i18n-zh>支持最多 3 位店员/合伙人同时提交</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-indigo-600 shrink-0 mt-0.5"></i>
+                <span data-i18n-ms>Label automatik: "Direkod Oleh [Nama Staf]"</span>
+                <span data-i18n-en>Auto-tag: "Submitted By [Staff Name]"</span>
+                <span data-i18n-zh>自动记录员工标记，报销明细一目了然</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-indigo-600 shrink-0 mt-0.5"></i>
+                <span data-i18n-ms>Simpanan salinan gambar resit bulanan di Google Drive</span>
+                <span data-i18n-en>Monthly Google Drive receipt photo archives</span>
+                <span data-i18n-zh>原始收据图片自动按月同步储存至云盘</span>
+              </li>
+            </ul>
           </div>
         </div>
 
-        <button onclick="handleWaitlist('Pro Growth (RM500/bln)')" class="w-full py-4 rounded-xl bg-slate-200 hover:bg-slate-300 text-slate-700 font-extrabold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2">
-          <i data-lucide="lock" class="w-4 h-4 text-slate-500"></i>
-          <span data-i18n-ms>Coming Soon • Sertai Senarai Menunggu</span>
-          <span data-i18n-en>Coming Soon • Join Waitlist</span>
+        <button id="btn-pro" onclick="handleHire('pro')" class="w-full py-4 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-extrabold text-xs uppercase tracking-wider shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2">
+          <i id="icon-pro" data-lucide="zap" class="w-4 h-4"></i>
+          <span id="text-pro" class="btn-text">
+            <span data-i18n-ms>Langgan Pakej Pro (RM79)</span>
+            <span data-i18n-en>Deploy Pro Growth (RM79)</span>
+            <span data-i18n-zh>选购 Pro 配套 (RM79)</span>
+          </span>
         </button>
       </div>
 
-      <!-- ================= PACKAGE 3: ENTERPRISE / CFO (RM1,000) - COMING SOON ================= -->
-      <div class="surface-card rounded-2xl p-8 flex flex-col justify-between border-slate-300 bg-slate-50/70 relative overflow-hidden" id="card-enterprise">
+      <!-- ================= PACKAGE 3: PREMIUM (RM99) - WHITELABEL ================= -->
+      <div class="surface-card rounded-2xl p-8 flex flex-col justify-between border-slate-300 relative" id="card-premium">
         
-        <!-- Coming Soon Badge -->
-        <div class="absolute -top-3.5 right-6 bg-slate-800 text-amber-300 text-[10px] font-extrabold tracking-widest uppercase px-3 py-1 rounded-full shadow-sm border border-slate-700">
-          Coming Soon
+        <!-- Whitelabel Badge -->
+        <div class="absolute -top-3.5 right-6 bg-slate-900 text-amber-300 text-[10px] font-extrabold tracking-widest uppercase px-3 py-1 rounded-full shadow-sm border border-slate-700">
+          <span data-i18n-ms>Whitelabel Custom</span>
+          <span data-i18n-en>Whitelabel Custom</span>
+          <span data-i18n-zh>专属定制独立品牌</span>
         </div>
 
         <div>
-          <!-- Mascot: Full Department (Muted) -->
-          <div class="flex flex-col items-center justify-center py-2 mb-4 relative opacity-75">
-            <div class="relative w-48 h-24 flex items-center justify-center">
-              <div class="w-14 h-16 bg-slate-900 border-2 border-brand-400 rounded-2xl flex flex-col items-center justify-center shadow-lg">
-                <span class="text-[9px] font-mono font-extrabold text-white tracking-wider bg-brand-600 px-1 rounded">CFO</span>
+          <!-- Mascot: Executive Bot -->
+          <div class="flex flex-col items-center justify-center py-2 mb-4 relative">
+            <div class="relative w-20 h-20 flex items-center justify-center animate-bot-float">
+              <div class="w-14 h-16 bg-slate-900 border-2 border-amber-400 rounded-2xl flex flex-col items-center justify-center shadow-lg">
+                <span class="text-[9px] font-mono font-extrabold text-white tracking-wider bg-amber-600 px-1 rounded">VIP</span>
+                <span class="text-[10px] text-amber-300 font-bold mt-1">BOT</span>
               </div>
             </div>
-            <span class="text-[11px] font-mono font-bold tracking-wider text-slate-500 bg-slate-200 px-3 py-0.5 rounded-full mt-2">
-              <span data-i18n-ms>JABATAN KEWANGAN KORPORAT LENGKAP</span>
-              <span data-i18n-en>FULL CORPORATE FINANCE DEPT</span>
-            </span>
+            <div class="w-16 h-2 bg-slate-300 rounded-full animate-shadow-pulse -mt-1 blur-[1px]"></div>
           </div>
 
           <div class="flex justify-between items-start mb-2">
             <div>
-              <span class="text-xs font-mono uppercase text-slate-400 font-extrabold tracking-wider">
+              <span class="text-xs font-mono uppercase text-amber-600 font-extrabold tracking-wider">
                 <span data-i18n-ms>Pakej 3</span>
                 <span data-i18n-en>Package 3</span>
+                <span data-i18n-zh>配套 3</span>
               </span>
-              <h3 class="text-2xl font-extrabold text-slate-800 mt-0.5">Enterprise / CFO</h3>
+              <h3 class="text-2xl font-extrabold text-slate-900 mt-0.5">Premium</h3>
             </div>
-            <span class="px-2.5 py-1 rounded-full bg-slate-200 text-[11px] font-semibold text-slate-600">
-              <span data-i18n-ms>1 – 5 Seats (Boleh diperluas sehingga 10)</span>
-              <span data-i18n-en>1 – 5 Seats (Expandable to 10)</span>
+            <span class="px-2.5 py-1 rounded-full bg-amber-50 text-[11px] font-bold text-amber-800 border border-amber-200">
+              <span data-i18n-ms>Multi-User Tanpa Had</span>
+              <span data-i18n-en>Unlimited Staff</span>
+              <span data-i18n-zh>无限制团队成员</span>
             </span>
           </div>
 
-          <div class="my-6 pb-6 border-b border-slate-200">
-            <span class="text-5xl font-black text-slate-400">RM1,000</span>
-            <span class="text-slate-400 text-sm font-medium">
-              <span data-i18n-ms>/ bulan</span>
-              <span data-i18n-en>/ month</span>
+          <!-- Description & Target Audience -->
+          <div class="bg-amber-50/70 border border-amber-100 rounded-xl p-3 my-3">
+            <span class="text-[11px] font-mono font-bold uppercase tracking-wider text-amber-800 block mb-1">
+              <span data-i18n-ms>🎯 Sesuai Untuk Siapa:</span>
+              <span data-i18n-en>🎯 Best Suited For:</span>
+              <span data-i18n-zh>🎯 最适合对象：</span>
             </span>
+            <p class="text-xs text-slate-700 leading-snug" data-i18n-ms>
+              Syarikat Sdn Bhd, francais, entiti korporat, atau pengasas yang mahu bot khas dengan nama & logo syarikat sendiri.
+            </p>
+            <p class="text-xs text-slate-700 leading-snug" data-i18n-en>
+              Sdn Bhd companies, established businesses, and founders wanting their own branded bot with custom logo & setup.
+            </p>
+            <p class="text-xs text-slate-700 leading-snug" data-i18n-zh>
+              中大型公司、连锁品牌，希望拥有专属公司名称和企业 Logo 的定制机器人。
+            </p>
+          </div>
+
+          <div class="my-5 pb-5 border-b border-slate-100">
+            <div class="flex items-baseline gap-1">
+              <span class="text-4xl font-black text-slate-900">RM99</span>
+              <span class="text-slate-500 text-xs font-medium">
+                <span data-i18n-ms>/ bulan</span>
+                <span data-i18n-en>/ month</span>
+                <span data-i18n-zh>/ 每月</span>
+              </span>
+            </div>
             <div class="text-xs text-amber-700 font-semibold mt-1">
-              <span data-i18n-ms>Coming Soon • Pilot Enterprise Dibuka</span>
-              <span data-i18n-en>Coming Soon • Enterprise Pilot Waitlist</span>
+              <span data-i18n-ms>Whitelabel Custom Bot Sendiri</span>
+              <span data-i18n-en>Custom Whitelabel Bot Branding</span>
+              <span data-i18n-zh>专属独立 Bot 机器人与 VIP 协助</span>
             </div>
           </div>
 
           <!-- Feature Breakdown -->
-          <div class="space-y-4 mb-6">
-            <div>
-              <h4 class="text-xs font-mono uppercase text-slate-400 font-bold mb-2">
-                <span data-i18n-ms>Had Kuota Bulanan:</span>
-                <span data-i18n-en>Monthly Quota Limit:</span>
-              </h4>
-              <div class="flex items-center gap-2 text-xs font-semibold text-slate-700 bg-slate-100 p-2.5 rounded-lg border border-slate-200">
-                <i data-lucide="receipt" class="w-4 h-4 text-slate-500"></i>
-                <span data-i18n-ms>500 resit / bulan</span>
-                <span data-i18n-en>500 receipts / month</span>
-              </div>
+          <div class="space-y-3 mb-6">
+            <div class="flex items-center gap-2 text-xs font-semibold text-slate-800 bg-slate-50 p-2.5 rounded-lg border border-slate-200">
+              <i data-lucide="receipt" class="w-4 h-4 text-amber-600"></i>
+              <span data-i18n-ms>500 resit / bulan</span>
+              <span data-i18n-en>500 receipts / month</span>
+              <span data-i18n-zh>每月额度：500 张收据</span>
             </div>
 
-            <div>
-              <h4 class="text-xs font-mono uppercase text-slate-400 font-bold mb-2">
-                <span data-i18n-ms>Tab Google Sheets Aktif:</span>
-                <span data-i18n-en>Active Google Sheets Tabs:</span>
-              </h4>
-              <ul class="text-xs text-slate-600 space-y-1.5 font-mono">
-                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-indigo-500 shrink-0"></i>
-                  <span data-i18n-ms>Semua tab Pakej 2 (Dashboard, Log, P&L, Trial Balance)</span>
-                  <span data-i18n-en>All Package 2 tabs (Dashboard, Log, P&L, Trial Balance)</span>
-                </li>
-                <li class="flex items-center gap-2"><i data-lucide="plus" class="w-4 h-4 text-brand-600 shrink-0"></i><span><strong>CFO_Metrics</strong></span></li>
-                <li class="flex items-center gap-2"><i data-lucide="plus" class="w-4 h-4 text-brand-600 shrink-0"></i><span><strong>Consolidated_P&L</strong></span></li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 class="text-xs font-mono uppercase text-slate-400 font-bold mb-2">
-                <span data-i18n-ms>Ciri Korporat:</span>
-                <span data-i18n-en>Enterprise Division:</span>
-              </h4>
-              <p class="text-xs text-slate-500" data-i18n-ms>Konsolidasi multi-cawangan/entiti, rekonsiliasi penyata bank automatik, dan sokongan SLA terdedikasi.</p>
-              <p class="text-xs text-slate-500" data-i18n-en>Multi-branch/entity consolidation, automated bank statement PDF reconciliations, and dedicated SLA.</p>
-            </div>
+            <ul class="text-xs text-slate-600 space-y-2">
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-amber-600 shrink-0 mt-0.5"></i>
+                <span data-i18n-ms>Custom Bot: Nama & Logo perniagaan anda (cth: @SyarikatAnda_Bot)</span>
+                <span data-i18n-en>Custom Bot: Your company name & logo (e.g. @YourCompany_Bot)</span>
+                <span data-i18n-zh>定制机器人：使用您公司的品牌名与 Logo</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-amber-600 shrink-0 mt-0.5"></i>
+                <span data-i18n-ms>Pengurusan staf tanpa had (Tiada sekatan bilangan pekerja)</span>
+                <span data-i18n-en>Unlimited staff accounts integration</span>
+                <span data-i18n-zh>支持无限多名员工接入，适合多门店协作</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-amber-600 shrink-0 mt-0.5"></i>
+                <span data-i18n-ms>Sokongan VIP 1-on-1 terus daripada pembangun sistem</span>
+                <span data-i18n-en>1-on-1 VIP Direct Engineering Support</span>
+                <span data-i18n-zh>创始人一对一技术配置与 VIP 优先支持</span>
+              </li>
+            </ul>
           </div>
         </div>
 
-        <button onclick="handleWaitlist('Enterprise / CFO (RM1,000/bln)')" class="w-full py-4 rounded-xl bg-slate-200 hover:bg-slate-300 text-slate-700 font-extrabold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2">
-          <i data-lucide="lock" class="w-4 h-4 text-slate-500"></i>
-          <span data-i18n-ms>Coming Soon • Sertai Senarai Menunggu</span>
-          <span data-i18n-en>Coming Soon • Join Waitlist</span>
+        <button id="btn-premium" onclick="handleHire('premium')" class="w-full py-4 rounded-xl bg-slate-900 hover:bg-black text-white font-extrabold text-xs uppercase tracking-wider shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2">
+          <i id="icon-premium" data-lucide="crown" class="w-4 h-4 text-amber-400"></i>
+          <span id="text-premium" class="btn-text">
+            <span data-i18n-ms>Langgan Premium (RM99)</span>
+            <span data-i18n-en>Deploy Premium (RM99)</span>
+            <span data-i18n-zh>选购 Premium 定制配套 (RM99)</span>
+          </span>
         </button>
       </div>
 
@@ -670,14 +749,17 @@ html
         <a href="#pricing" class="hover:text-brand-600 transition-colors">
           <span data-i18n-ms>Pakej Staf</span>
           <span data-i18n-en>Staffing Packages</span>
+          <span data-i18n-zh>配套方案</span>
         </a>
         <a href="#" class="hover:text-brand-600 transition-colors">
           <span data-i18n-ms>Penafian Perakaunan</span>
           <span data-i18n-en>Accounting Disclaimer</span>
+          <span data-i18n-zh>免责声明</span>
         </a>
         <a href="#" class="hover:text-brand-600 transition-colors">
           <span data-i18n-ms>Dasar Privasi</span>
           <span data-i18n-en>Privacy Policy</span>
+          <span data-i18n-zh>隐私条款</span>
         </a>
       </div>
     </div>
@@ -687,9 +769,11 @@ html
   <script>
     lucide.createIcons();
 
-    // Production Stripe Payment Link for Starter (Active checkout)
+    // Production Stripe Payment Links
     const stripeLinks = {
-      'starter': 'https://buy.stripe.com/dRm3cx7R6beqeOy14u1sQ0i'
+      'starter': 'https://buy.stripe.com/fZueVf8Va5U6bCm6oO1sQ0l',
+      'pro': 'https://buy.stripe.com/fZu5kF2wM82e8qaeVk1sQ0m',
+      'premium': 'https://buy.stripe.com/7sYfZjefu4Q221M28y1sQ0n'
     };
 
     let currentLang = 'ms';
@@ -699,76 +783,80 @@ html
       const body = document.getElementById('page-body');
       const btnMs = document.getElementById('btn-lang-ms');
       const btnEn = document.getElementById('btn-lang-en');
+      const btnZh = document.getElementById('btn-lang-zh');
+
+      body.classList.remove('lang-en', 'lang-zh');
+      [btnMs, btnEn, btnZh].forEach(b => {
+        b.classList.remove('bg-white', 'text-brand-600', 'shadow-sm');
+        b.classList.add('text-slate-500');
+      });
 
       if (lang === 'en') {
         body.classList.add('lang-en');
         document.documentElement.setAttribute('lang', 'en');
-        
         btnEn.classList.add('bg-white', 'text-brand-600', 'shadow-sm');
         btnEn.classList.remove('text-slate-500');
-
-        btnMs.classList.remove('bg-white', 'text-brand-600', 'shadow-sm');
-        btnMs.classList.add('text-slate-500');
+      } else if (lang === 'zh') {
+        body.classList.add('lang-zh');
+        document.documentElement.setAttribute('lang', 'zh');
+        btnZh.classList.add('bg-white', 'text-brand-600', 'shadow-sm');
+        btnZh.classList.remove('text-slate-500');
       } else {
-        body.classList.remove('lang-en');
         document.documentElement.setAttribute('lang', 'ms');
-
         btnMs.classList.add('bg-white', 'text-brand-600', 'shadow-sm');
         btnMs.classList.remove('text-slate-500');
-
-        btnEn.classList.remove('bg-white', 'text-brand-600', 'shadow-sm');
-        btnEn.classList.add('text-slate-500');
       }
       lucide.createIcons();
     }
 
     function handleHire(tier) {
       if (!stripeLinks[tier]) return;
-
       const button = document.getElementById(`btn-${tier}`);
       const mascot = document.getElementById(`mascot-${tier}`);
       const icon = document.getElementById(`icon-${tier}`);
       const text = document.getElementById(`text-${tier}`);
 
-      if (!button || !mascot) return;
+      if (!button) return;
 
       if (icon) {
         icon.setAttribute('data-lucide', 'unlock');
         lucide.createIcons();
       }
 
-      button.classList.remove('bg-brand-600', 'hover:bg-brand-700');
+      button.classList.remove('bg-brand-600', 'hover:bg-brand-700', 'bg-indigo-600', 'hover:bg-indigo-700', 'bg-slate-900', 'hover:bg-black');
       button.classList.add('bg-emerald-600', 'text-white', 'shadow-emerald-500/25');
 
       if (text) {
-        text.innerText = currentLang === 'ms' 
-          ? 'Membuka Kunci... Mengalihkan ke Stripe...' 
-          : 'Unlocked! Redirecting to Stripe Checkout...';
+        if (currentLang === 'zh') {
+          text.innerText = '正在启动... 正在跳转至 Stripe 安全结账页面...';
+        } else if (currentLang === 'en') {
+          text.innerText = 'Unlocked! Redirecting to Stripe Checkout...';
+        } else {
+          text.innerText = 'Membuka Kunci... Mengalihkan ke Stripe...';
+        }
       }
 
-      mascot.classList.remove('animate-bot-float');
-      mascot.classList.add('jumping-joy');
+      if (mascot) {
+        mascot.classList.remove('animate-bot-float');
+        mascot.classList.add('jumping-joy');
+      }
 
       setTimeout(() => {
         window.location.href = stripeLinks[tier];
-      }, 1500);
-    }
-
-    function handleWaitlist(tierName) {
-      if (currentLang === 'ms') {
-        alert(`Pakej ${tierName} kini ditandakan sebagai COMING SOON untuk kohort pelancaran seterusnya.\n\nSila langgan Pakej Starter (RM260/bln) untuk memulakan sekarang, atau hubungi Virtual CFO kami untuk menyertai senarai menunggu berkeutamaan!`);
-      } else {
-        alert(`The ${tierName} tier is currently COMING SOON for our upcoming release cohort.\n\nPlease activate the Starter Plan (RM260/mo) to start immediately, or consult our Virtual CFO to join the priority waitlist!`);
-      }
+      }, 1200);
     }
 
     function openVoiceflowChat() {
       if (window.voiceflow && window.voiceflow.chat) {
         window.voiceflow.chat.open();
       } else {
-        alert(currentLang === 'ms' 
-          ? "Memulakan Vortex AI Core... Sila klik gelembung sembang di sudut kanan bawah!" 
-          : "Initializing Vortex AI Core... Click the blue chat bubble at the bottom right!");
+        if (currentLang === 'zh') {
+          alert("正在加载 Vortex AI Core... 请点击右下角蓝色聊天气泡开始咨询！");
+        } else if (currentLang === 'en') {
+          alert("Initializing Vortex AI Core... Click the blue chat bubble at the bottom right!");
+        } else {
+          alert("Memulakan Vortex AI Core... Sila klik gelembung sembang di sudut kanan bawah!");
+        }
       }
     }
   </script>
